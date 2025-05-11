@@ -8,7 +8,10 @@ public class RoadManager : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO bulidInput;
     [SerializeField] private Grid mapGrid;
-    public GameObject roadBlackPrefab;
+    [SerializeField] private GameEventChannelSO buildObjectUI;
+    [SerializeField] private GameObject buildUI;
+    private GameObject _roadBlackPrefab;
+    private int _buildCost;
 
     public UnityEvent<bool> OnConstructionModeChage;
     public UnityEvent OnUpdateRoad;
@@ -35,17 +38,28 @@ public class RoadManager : MonoBehaviour
         _meshFilter.mesh = new Mesh();
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
+        buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
+        buildUI.SetActive(false);
     }
 
     private void OnDestroy()
     {
         bulidInput.OnBuildPressed -= HandleClick;
         bulidInput.OnBuildModeChange -= HandleBuildModeChange;
+        buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
+
+    }
+
+    private void HadnleBuildObjectChange(BuildObjectUI evnt)
+    {
+        _roadBlackPrefab = evnt.buildObject;
+        _buildCost = evnt.buildCost;
     }
 
     private void HandleBuildModeChange(bool changeModeValue)
     {
         ConstructionMode = changeModeValue;
+        buildUI.SetActive(changeModeValue);
     }
 
     private void HandleClick()
@@ -59,7 +73,7 @@ public class RoadManager : MonoBehaviour
         {
             Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
             center.y = 0;
-            GameObject road = Instantiate(roadBlackPrefab, center, Quaternion.identity);
+            GameObject road = Instantiate(_roadBlackPrefab, center, Quaternion.identity);
             road.transform.SetParent(transform);
 
             OnUpdateRoad?.Invoke();
