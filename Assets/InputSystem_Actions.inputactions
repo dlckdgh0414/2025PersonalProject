@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RotObject",
+                    "type": "Button",
+                    "id": "57bef085-40bb-4180-80fa-1b55a620addd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -205,6 +214,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ChangeBuildMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "922626bb-9f4f-485d-85f0-6e2b7a65193c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RotObject",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

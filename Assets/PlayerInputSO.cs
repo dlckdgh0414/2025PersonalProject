@@ -9,6 +9,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
 
     public Action OnBuildPressed;
     public Action<bool> OnBuildModeChange;
+    public Action OnRotObjectEvent;
 
     private InputSystem_Actions _controls;
 
@@ -83,6 +84,14 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
                 OnBuildModeChange?.Invoke(false);
                 _changeCount = 0;
             }
+        }
+    }
+
+    public void OnRotObject(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnRotObjectEvent?.Invoke();
         }
     }
 }

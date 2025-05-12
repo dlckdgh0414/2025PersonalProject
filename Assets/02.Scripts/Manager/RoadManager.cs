@@ -11,6 +11,8 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private GameEventChannelSO buildObjectUI;
     [SerializeField] private GameObject buildUI;
     private GameObject _roadBlackPrefab;
+    private GameObject _roadPrivePrefab;
+    private float RotBuildObject =0;
     private int _buildCost;
 
     public UnityEvent<bool> OnConstructionModeChage;
@@ -38,6 +40,7 @@ public class RoadManager : MonoBehaviour
         _meshFilter.mesh = new Mesh();
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
+        bulidInput.OnRotObjectEvent += HandleRoatObject;
         buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
         buildUI.SetActive(true);
     }
@@ -46,18 +49,45 @@ public class RoadManager : MonoBehaviour
     {
         bulidInput.OnBuildPressed -= HandleClick;
         bulidInput.OnBuildModeChange -= HandleBuildModeChange;
+        bulidInput.OnRotObjectEvent -= HandleRoatObject;
         buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
 
     }
 
+    private void Update()
+    {
+        if (ConstructionMode)
+        {
+            Vector3 placementPos = bulidInput.GetWorldPosition();
+            if(_roadPrivePrefab == null)
+            {
+                _roadPrivePrefab = Instantiate(_roadBlackPrefab);
+                _roadPrivePrefab.SetActive(true);
+            }
+            placementPos.y = 0f;
+            _roadPrivePrefab.transform.position = placementPos;
+            _roadPrivePrefab.transform.rotation = Quaternion.Euler(0, RotBuildObject, 0); 
+        }
+    }
+
+    private void HandleRoatObject()
+    {
+        RotBuildObject += 90;
+    }
+
     private void HadnleBuildObjectChange(BuildObjectUI evnt)
     {
+        _roadPrivePrefab = null;
         _roadBlackPrefab = evnt.buildObject;
         _buildCost = evnt.buildCost;
     }
 
     private void HandleBuildModeChange(bool changeModeValue)
     {
+        if(_roadPrivePrefab != null)
+        {
+            _roadPrivePrefab.SetActive(changeModeValue);    
+        }
         ConstructionMode = changeModeValue;
         buildUI.SetActive(!changeModeValue);
     }
@@ -73,7 +103,7 @@ public class RoadManager : MonoBehaviour
         {
             Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
             center.y = 0;
-            GameObject road = Instantiate(_roadBlackPrefab, center, Quaternion.identity);
+            GameObject road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
             road.transform.SetParent(transform);
 
             OnUpdateRoad?.Invoke();

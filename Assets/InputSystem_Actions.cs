@@ -126,6 +126,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""57bef085-40bb-4180-80fa-1b55a620addd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -291,6 +300,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""ChangeBuildMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""922626bb-9f4f-485d-85f0-6e2b7a65193c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RotObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -882,6 +902,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Pointer = m_Player.FindAction("Pointer", throwIfNotFound: true);
         m_Player_Build = m_Player.FindAction("Build", throwIfNotFound: true);
         m_Player_ChangeBuildMode = m_Player.FindAction("ChangeBuildMode", throwIfNotFound: true);
+        m_Player_RotObject = m_Player.FindAction("RotObject", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -979,6 +1000,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pointer;
     private readonly InputAction m_Player_Build;
     private readonly InputAction m_Player_ChangeBuildMode;
+    private readonly InputAction m_Player_RotObject;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1006,6 +1028,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ChangeBuildMode".
         /// </summary>
         public InputAction @ChangeBuildMode => m_Wrapper.m_Player_ChangeBuildMode;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RotObject".
+        /// </summary>
+        public InputAction @RotObject => m_Wrapper.m_Player_RotObject;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1044,6 +1070,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ChangeBuildMode.started += instance.OnChangeBuildMode;
             @ChangeBuildMode.performed += instance.OnChangeBuildMode;
             @ChangeBuildMode.canceled += instance.OnChangeBuildMode;
+            @RotObject.started += instance.OnRotObject;
+            @RotObject.performed += instance.OnRotObject;
+            @RotObject.canceled += instance.OnRotObject;
         }
 
         /// <summary>
@@ -1067,6 +1096,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ChangeBuildMode.started -= instance.OnChangeBuildMode;
             @ChangeBuildMode.performed -= instance.OnChangeBuildMode;
             @ChangeBuildMode.canceled -= instance.OnChangeBuildMode;
+            @RotObject.started -= instance.OnRotObject;
+            @RotObject.performed -= instance.OnRotObject;
+            @RotObject.canceled -= instance.OnRotObject;
         }
 
         /// <summary>
@@ -1395,6 +1427,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnChangeBuildMode(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RotObject" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotObject(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
