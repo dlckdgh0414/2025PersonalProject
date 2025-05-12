@@ -319,7 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulidInput: {fileID: 11400000, guid: a597eb19651c8af468f6b866e796f8ca, type: 2}
   mapGrid: {fileID: 1733420679}
-  roadBlackPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+  buildObjectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
+  buildUI: {fileID: 2120349452}
   OnConstructionModeChage:
     m_PersistentCalls:
       m_Calls: []
@@ -792,6 +793,7 @@ MonoBehaviour:
   buttonImage: {fileID: 292372600}
   costText: {fileID: 422134009}
   buildObjectSO: {fileID: 11400000, guid: 33297c4bd8dc0d042ac7752bd79c93a2, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &292372599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +837,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292372600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 292372598}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292372600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,7 +1285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -960, y: 0}
   m_SizeDelta: {x: 1954.3359, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &468261334
@@ -2153,6 +2167,7 @@ MonoBehaviour:
   buttonImage: {fileID: 743945668}
   costText: {fileID: 1440031422}
   buildObjectSO: {fileID: 11400000, guid: 1b47404c65609094e850c1b274a6d858, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &743945667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,7 +2211,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743945668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 743945666}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &743945668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2290,6 +2317,7 @@ MonoBehaviour:
   buttonImage: {fileID: 759479139}
   costText: {fileID: 598596105}
   buildObjectSO: {fileID: 11400000, guid: 7a8d50efa32006d4cba34832433a656b, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &759479138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,7 +2361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759479139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 759479137}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759479139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,6 +2543,7 @@ MonoBehaviour:
   buttonImage: {fileID: 900431451}
   costText: {fileID: 698644239}
   buildObjectSO: {fileID: 11400000, guid: 195a36027a325bd48a0751be22098222, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &900431450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2546,7 +2587,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 900431451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900431449}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &900431451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2971,6 +3024,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1037699875}
   costText: {fileID: 518719379}
   buildObjectSO: {fileID: 11400000, guid: 447f0c219b4b6da4abe7d5444f49a06d, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1037699874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,7 +3068,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037699875}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037699873}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037699875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3842,7 +3908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1231947993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1231947995}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1231947993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3896,6 +3974,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1231947993}
   costText: {fileID: 1062959723}
   buildObjectSO: {fileID: 11400000, guid: 4ffa27a5df5bf3e4c9310a00059b05e2, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!1 &1256164118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4591,6 +4670,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1511365282}
   costText: {fileID: 382624511}
   buildObjectSO: {fileID: 11400000, guid: 229b657ad23bc1e46b14a5b09268c634, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1511365281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4634,7 +4714,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1511365282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1511365280}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1511365282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4728,6 +4820,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1556387250}
   costText: {fileID: 902759050}
   buildObjectSO: {fileID: 11400000, guid: 458eed299fec71649b064ab882f6e96e, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1556387249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4771,7 +4864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556387250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1556387248}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556387250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,6 +4970,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1626209432}
   costText: {fileID: 2088420406}
   buildObjectSO: {fileID: 11400000, guid: 27bd48294983f3848bb36efb57a9c6c8, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1626209431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4908,7 +5014,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1626209432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1626209430}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1626209432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,7 +5368,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2014654043}
   m_HandleRect: {fileID: 2014654042}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 0.49121544
   m_Size: 0.4955688
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5349,6 +5467,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1829930471}
   costText: {fileID: 608267608}
   buildObjectSO: {fileID: 11400000, guid: 40bf5d709c57d2a48ab2eae3f0a027ee, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1829930470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5392,7 +5511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1829930471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1829930469}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1829930471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5683,6 +5814,7 @@ MonoBehaviour:
   buttonImage: {fileID: 1967217399}
   costText: {fileID: 1218504428}
   buildObjectSO: {fileID: 11400000, guid: d2e064e6a3c716f488027773e8e0604e, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &1967217398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +5858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1967217399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1967217397}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1967217399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5971,6 +6115,7 @@ MonoBehaviour:
   buttonImage: {fileID: 2065763449}
   costText: {fileID: 1179619890}
   buildObjectSO: {fileID: 11400000, guid: 77181db23a959204ab730cb42c515526, type: 2}
+  buildObejectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
 --- !u!114 &2065763448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6014,7 +6159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2065763449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2065763447}
+        m_TargetAssemblyTypeName: BuildButtonUI, Assembly-CSharp
+        m_MethodName: HandleCilckButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2065763449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6316,7 +6473,7 @@ Canvas:
   m_GameObject: {fileID: 2120349452}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

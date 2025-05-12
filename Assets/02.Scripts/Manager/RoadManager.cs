@@ -39,7 +39,7 @@ public class RoadManager : MonoBehaviour
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
         buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
-        buildUI.SetActive(false);
+        buildUI.SetActive(true);
     }
 
     private void OnDestroy()
@@ -59,12 +59,12 @@ public class RoadManager : MonoBehaviour
     private void HandleBuildModeChange(bool changeModeValue)
     {
         ConstructionMode = changeModeValue;
-        buildUI.SetActive(changeModeValue);
+        buildUI.SetActive(!changeModeValue);
     }
 
     private void HandleClick()
     {
-        if (ConstructionMode == false) return;
+        if (ConstructionMode == false || _roadBlackPrefab ==null) return;
 
         Vector3 worldPosition = bulidInput.GetWorldPosition();
         Vector3Int cellPoint = mapGrid.WorldToCell(worldPosition);
