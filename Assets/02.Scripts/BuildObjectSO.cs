@@ -4,6 +4,6 @@ using UnityEngine;
 public class BuildObjectSO : ScriptableObject
 {
     public Sprite BuildIcon;
-    public GameObject BuildObject;
+    public RoadPrefab BuildObject;
     public int BuildCost;
 }

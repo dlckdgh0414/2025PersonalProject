@@ -8,9 +8,9 @@ public class BuildUIEventChannel :MonoBehaviour
 public class BuildObjectUI : GameEvent
 {
     public int buildCost;
-    public GameObject buildObject;
+    public RoadPrefab buildObject;
 
-    public BuildObjectUI Initializer(GameObject buildObject,int buildCost)
+    public BuildObjectUI Initializer(RoadPrefab buildObject,int buildCost)
     {
         this.buildObject = buildObject;
         this.buildCost = buildCost;

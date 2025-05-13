@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BuildRoad1
   m_EditorClassIdentifier: 
   BuildIcon: {fileID: 21300000, guid: 7ee68e919af7a354d88bc4af86761e43, type: 3}
-  BuildObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+  BuildObject: {fileID: 5918846292021350702, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   BuildCost: 3

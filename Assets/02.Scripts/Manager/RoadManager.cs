@@ -10,8 +10,8 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private Grid mapGrid;
     [SerializeField] private GameEventChannelSO buildObjectUI;
     [SerializeField] private GameObject buildUI;
-    private GameObject _roadBlackPrefab;
-    private GameObject _roadPrivePrefab;
+    private RoadPrefab _roadBlackPrefab;
+    private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
     private int _buildCost;
 
@@ -62,9 +62,9 @@ public class RoadManager : MonoBehaviour
             if(_roadPrivePrefab == null)
             {
                 _roadPrivePrefab = Instantiate(_roadBlackPrefab);
-                _roadPrivePrefab.SetActive(true);
+                _roadPrivePrefab.gameObject.SetActive(true);
             }
-            placementPos.y = 0f;
+            placementPos.y = 0.5f;
             _roadPrivePrefab.transform.position = placementPos;
             _roadPrivePrefab.transform.rotation = Quaternion.Euler(0, RotBuildObject, 0); 
         }
@@ -86,7 +86,7 @@ public class RoadManager : MonoBehaviour
     {
         if(_roadPrivePrefab != null)
         {
-            _roadPrivePrefab.SetActive(changeModeValue);    
+            _roadPrivePrefab.gameObject.SetActive(changeModeValue);    
         }
         ConstructionMode = changeModeValue;
         buildUI.SetActive(!changeModeValue);
@@ -102,9 +102,10 @@ public class RoadManager : MonoBehaviour
         if (_roadPoints.Add(cellPoint))
         {
             Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
-            center.y = 0;
-            GameObject road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
+            center.y = 0.5f;
+            RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
             road.transform.SetParent(transform);
+            road.IsBuilding = true;
 
             OnUpdateRoad?.Invoke();
         }
