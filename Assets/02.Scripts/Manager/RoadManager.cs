@@ -22,6 +22,7 @@ public class RoadManager : MonoBehaviour
 
     private HashSet<Vector3Int> _roadPoints;
     private MeshFilter _meshFilter;
+    private bool _isFirstBuilding = false;
 
     public bool ConstructionMode
     {
@@ -99,15 +100,29 @@ public class RoadManager : MonoBehaviour
         Vector3 worldPosition = bulidInput.GetWorldPosition();
         Vector3Int cellPoint = mapGrid.WorldToCell(worldPosition);
 
-        if (_roadPoints.Add(cellPoint))
+       
+        if(_isFirstBuilding)
         {
-            Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
-            center.y = 0.5f;
-            RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
-            road.transform.SetParent(transform);
-            road.IsBuilding = true;
-
-            OnUpdateRoad?.Invoke();
+            _roadPrivePrefab.isFirtsBuilding = true;
         }
+
+        if(_roadPrivePrefab.isRoad)
+        {
+            if (_roadPoints.Add(cellPoint))
+            {
+                Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
+                center.y = 0.5f;
+                RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
+                road.transform.SetParent(transform);
+                road.IsBuilding = true;
+                if (!_isFirstBuilding)
+                {
+                    _isFirstBuilding = true;
+                }
+
+                OnUpdateRoad?.Invoke();
+            }
+        }
+
     }
 }

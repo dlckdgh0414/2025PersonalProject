@@ -130,8 +130,6 @@ MonoBehaviour:
   roadChecks:
   - {fileID: 2188687047582869797}
   - {fileID: 5309166619953763808}
-  falseMAT: {fileID: 2100000, guid: 1d0957584f547cd4d9e52141c00cf177, type: 2}
-  trueMAT: {fileID: 2100000, guid: b9b9b77f69fb5bc45b1994a1f2fcd4a5, type: 2}
   IsBuilding: 0
 --- !u!1 &1129469182150144220
 GameObject:
@@ -180,7 +178,7 @@ MonoBehaviour:
   whatIsRoad:
     serializedVersion: 2
     m_Bits: 256
-  distance: 0.19
+  distance: 1
 --- !u!1 &3457690301451782226
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +332,7 @@ MonoBehaviour:
   whatIsRoad:
     serializedVersion: 2
     m_Bits: 256
-  distance: 0.19
+  distance: 1
 --- !u!1 &6348170127606719937
 GameObject:
   m_ObjectHideFlags: 0
