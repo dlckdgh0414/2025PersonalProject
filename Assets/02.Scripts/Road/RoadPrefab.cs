@@ -1,45 +1,49 @@
 using UnityEngine;
-using UnityEngine.Splines.ExtrusionShapes;
 
 public class RoadPrefab : MonoBehaviour
 {
-    [SerializeField] private RoadCheckRay[] roadChecks;
-    public bool isRoad {get; private set;} = false;
+    [SerializeField] private Transform[] roadChecks;
+    public bool isRoad { get; private set; } = false;
     public bool IsBuilding = false;
+    [SerializeField] private LayerMask whatIsRoad;
+    [SerializeField] private float distance = 1f;
     public bool isFirtsBuilding = false;
 
     private void Update()
     {
         if (!IsBuilding)
         {
-            BuildingCheck();
+            isRoad = RoadCheck();
         }
         else
         {
-            isRoad=false;
+            isRoad = false;
         }
     }
 
-    public void BuildingCheck()
+    public bool RoadCheck()
     {
-        foreach (RoadCheckRay road in roadChecks)
+        foreach (var check in roadChecks)
         {
-            if (road.RoadCheck())
+            if (Physics.Raycast(check.position, check.forward, out RaycastHit hit, distance, whatIsRoad))
             {
-                isRoad = true;
-               
+                return true;
             }
-            else
+        }
+        return false;
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        if (roadChecks != null)
+        {
+            foreach (var check in roadChecks)
             {
-                if (!isFirtsBuilding)
-                {
-                    isRoad = true;
-                    
-                }
-                else
-                {
-                    isRoad = false;
-                }
+                if (check != null)
+                    Gizmos.DrawRay(check.position, check.forward * distance);
             }
         }
     }

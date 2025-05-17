@@ -100,13 +100,7 @@ public class RoadManager : MonoBehaviour
         Vector3 worldPosition = bulidInput.GetWorldPosition();
         Vector3Int cellPoint = mapGrid.WorldToCell(worldPosition);
 
-       
-        if(_isFirstBuilding)
-        {
-            _roadPrivePrefab.isFirtsBuilding = true;
-        }
-
-        if(_roadPrivePrefab.isRoad)
+        if (CanPlaceRoad(_roadPrivePrefab))
         {
             if (_roadPoints.Add(cellPoint))
             {
@@ -123,6 +117,16 @@ public class RoadManager : MonoBehaviour
                 OnUpdateRoad?.Invoke();
             }
         }
+    }
 
+    public bool CanPlaceRoad(RoadPrefab roadPrefab)
+    {
+        if (!_isFirstBuilding)
+        {
+            _isFirstBuilding = true;
+            return true;
+        }
+
+        return roadPrefab.RoadCheck();
     }
 }

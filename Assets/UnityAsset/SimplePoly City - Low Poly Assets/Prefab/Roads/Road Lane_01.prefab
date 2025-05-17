@@ -128,9 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadChecks:
-  - {fileID: 2188687047582869797}
-  - {fileID: 5309166619953763808}
+  - {fileID: 1022554953947498534}
+  - {fileID: 6695158600990548163}
   IsBuilding: 0
+  whatIsRoad:
+    serializedVersion: 2
+    m_Bits: 256
+  distance: 1
+  roadCnt: {fileID: 0}
+  isFirtsBuilding: 0
 --- !u!1 &1129469182150144220
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +146,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6695158600990548163}
-  - component: {fileID: 5309166619953763808}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -163,22 +168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400000}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &5309166619953763808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129469182150144220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd4a7fc844a89142ba1ec50189acbc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatIsRoad:
-    serializedVersion: 2
-    m_Bits: 256
-  distance: 1
 --- !u!1 &3457690301451782226
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +283,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022554953947498534}
-  - component: {fileID: 2188687047582869797}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -317,22 +305,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2188687047582869797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6333805872895744531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd4a7fc844a89142ba1ec50189acbc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatIsRoad:
-    serializedVersion: 2
-    m_Bits: 256
-  distance: 1
 --- !u!1 &6348170127606719937
 GameObject:
   m_ObjectHideFlags: 0

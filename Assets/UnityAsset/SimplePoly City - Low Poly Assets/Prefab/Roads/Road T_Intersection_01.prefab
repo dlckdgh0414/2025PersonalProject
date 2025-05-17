@@ -101,3 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadChecks: []
   IsBuilding: 0
+  whatIsRoad:
+    serializedVersion: 2
+    m_Bits: 256
+  distance: 1
+  roadCnt: {fileID: 0}
+  isFirtsBuilding: 0
