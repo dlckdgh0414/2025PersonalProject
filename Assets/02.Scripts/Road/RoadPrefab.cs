@@ -7,7 +7,8 @@ public class RoadPrefab : MonoBehaviour
     public bool IsBuilding = false;
     [SerializeField] private LayerMask whatIsRoad;
     [SerializeField] private float distance = 1f;
-    public bool isFirtsBuilding = false;
+
+
 
     private void Update()
     {
@@ -28,9 +29,18 @@ public class RoadPrefab : MonoBehaviour
             if (Physics.Raycast(check.position, check.forward, out RaycastHit hit, distance, whatIsRoad))
             {
                 return true;
+                
             }
         }
         return false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!IsBuilding)
+        {
+            isRoad = false;
+        }
     }
 
 

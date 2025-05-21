@@ -57,7 +57,7 @@ public class RoadManager : MonoBehaviour
 
     private void Update()
     {
-        if (ConstructionMode)
+        if (ConstructionMode && _roadBlackPrefab != null)
         {
             Vector3 placementPos = bulidInput.GetWorldPosition();
             if(_roadPrivePrefab == null)
