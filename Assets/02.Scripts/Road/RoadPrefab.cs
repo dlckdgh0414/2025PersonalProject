@@ -3,11 +3,11 @@ using UnityEngine;
 public class RoadPrefab : MonoBehaviour
 {
     [SerializeField] private Transform[] roadChecks;
+    [SerializeField] private Transform[] groundChecks;
     public bool isRoad { get; private set; } = false;
     public bool IsBuilding = false;
-    [SerializeField] private LayerMask whatIsRoad;
+    [SerializeField] private LayerMask whatIsRoad,whatIsGround;
     [SerializeField] private float distance = 1f;
-
 
 
     private void Update()
@@ -28,7 +28,15 @@ public class RoadPrefab : MonoBehaviour
         {
             if (Physics.Raycast(check.position, check.forward, out RaycastHit hit, distance, whatIsRoad))
             {
-                return true;
+                foreach(var groundCheck in groundChecks)
+                {
+                    if (Physics.Raycast(groundCheck.position, Vector3.down, out RaycastHit hitGround, 1, whatIsGround))
+                    {
+                            isRoad = true;
+                            return true;
+                        
+                    }
+                }
                 
             }
         }
