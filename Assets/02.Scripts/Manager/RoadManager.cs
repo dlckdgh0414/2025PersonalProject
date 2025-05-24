@@ -63,7 +63,6 @@ public class RoadManager : MonoBehaviour
             if(_roadPrivePrefab == null)
             {
                 _roadPrivePrefab = Instantiate(_roadBlackPrefab);
-                _roadPrivePrefab.gameObject.SetActive(true);
             }
             placementPos.y = 0.5f;
             _roadPrivePrefab.transform.position = placementPos;
@@ -87,7 +86,7 @@ public class RoadManager : MonoBehaviour
     {
         if(_roadPrivePrefab != null)
         {
-            _roadPrivePrefab.gameObject.SetActive(changeModeValue);    
+            Destroy(_roadPrivePrefab.gameObject);
         }
         ConstructionMode = changeModeValue;
         buildUI.SetActive(!changeModeValue);
