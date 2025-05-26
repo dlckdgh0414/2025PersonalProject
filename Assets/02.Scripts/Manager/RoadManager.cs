@@ -59,13 +59,13 @@ public class RoadManager : MonoBehaviour
     {
         if (ConstructionMode && _roadBlackPrefab != null)
         {
-            Vector3 placementPos = bulidInput.GetWorldPosition();
-            if(_roadPrivePrefab == null)
+            Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
+            if (_roadPrivePrefab == null)
             {
-                _roadPrivePrefab = Instantiate(_roadBlackPrefab);
+                _roadPrivePrefab = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0, RotBuildObject, 0)); ;
             }
-            placementPos.y = 0.5f;
-            _roadPrivePrefab.transform.position = placementPos;
+            center.y = 0.5f;
+            _roadPrivePrefab.transform.position = center;
             _roadPrivePrefab.transform.rotation = Quaternion.Euler(0, RotBuildObject, 0); 
         }
     }
@@ -96,14 +96,11 @@ public class RoadManager : MonoBehaviour
     {
         if (ConstructionMode == false || _roadBlackPrefab ==null) return;
 
-        Vector3 worldPosition = bulidInput.GetWorldPosition();
-        Vector3Int cellPoint = mapGrid.WorldToCell(worldPosition);
-
         if (CanPlaceRoad(_roadPrivePrefab))
         {
-            if (_roadPoints.Add(cellPoint))
+            if (_roadPoints.Add(GetCellSize()))
             {
-                Vector3 center = mapGrid.GetCellCenterWorld(cellPoint);
+                Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
                 center.y = 0.5f;
                 RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
                 road.transform.SetParent(transform);
@@ -116,6 +113,13 @@ public class RoadManager : MonoBehaviour
                 OnUpdateRoad?.Invoke();
             }
         }
+    }
+
+    private Vector3Int GetCellSize()
+    {
+        Vector3 worldPosition = bulidInput.GetWorldPosition();
+        Vector3Int cellPoint = mapGrid.WorldToCell(worldPosition);
+        return cellPoint;
     }
 
     public bool CanPlaceRoad(RoadPrefab roadPrefab)
