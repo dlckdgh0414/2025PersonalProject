@@ -10,12 +10,14 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
     public Action OnBuildPressed;
     public Action<bool> OnBuildModeChange;
     public Action OnRotObjectEvent;
+    public Action<float> OnZoomOutCamEvent;
 
     private InputSystem_Actions _controls;
 
     [SerializeField] private LayerMask whatIsGround;
 
     public Vector2 MovementKey { get; private set; }
+    public bool IsBuildChannel { get; private set; } = false;
 
     private Vector3 _worldPosition;
     private Vector2 _screenPosition;
@@ -59,6 +61,14 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
         Ray cameraRay = mainCam.ScreenPointToRay(_screenPosition);
         if (Physics.Raycast(cameraRay, out RaycastHit hit, mainCam.farClipPlane, whatIsGround))
         {
+            if (hit.collider.CompareTag("Road"))
+            {
+                IsBuildChannel = true;
+            }
+            else
+            {
+                IsBuildChannel = false;
+            }
             _worldPosition = hit.point;
         }
 
@@ -93,5 +103,11 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
         {
             OnRotObjectEvent?.Invoke();
         }
+    }
+
+    public void OnMouseScrollY(InputAction.CallbackContext context)
+    {
+        float scroll = context.ReadValue<float>();
+        OnZoomOutCamEvent?.Invoke(scroll);
     }
 }

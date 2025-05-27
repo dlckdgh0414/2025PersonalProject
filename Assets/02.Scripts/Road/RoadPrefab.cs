@@ -30,10 +30,9 @@ public class RoadPrefab : MonoBehaviour
             {
                 foreach(var groundCheck in groundChecks)
                 {
-                    if (Physics.Raycast(groundCheck.position, Vector3.down, out RaycastHit hitGround, 1, whatIsGround))
+                    if (Physics.Raycast(groundCheck.position, Vector3.down, out RaycastHit hitGround, 0.6f, whatIsGround))
                     {
-                            isRoad = true;
-                            return true;
+                          return true;
                         
                     }
                 }

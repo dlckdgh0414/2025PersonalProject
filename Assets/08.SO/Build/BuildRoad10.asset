@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildIcon: {fileID: 21300000, guid: c59ac3b9fd19d414dbbb4eb242cabbed, type: 3}
   BuildObject: {fileID: -2175105509351786317, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
-  BuildCost: 3
+  BuildCost: 1

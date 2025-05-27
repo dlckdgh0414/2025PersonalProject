@@ -8,8 +8,11 @@ public class RoadManager : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO bulidInput;
     [SerializeField] private Grid mapGrid;
+    [SerializeField] private Transform roadTrm;
     [SerializeField] private GameEventChannelSO buildObjectUI;
-    [SerializeField] private GameObject buildUI;
+    [SerializeField] private GameEventChannelSO buildObject;
+    [SerializeField] private GameObject selectUI;
+    [SerializeField] private GameObject bulidUI;
     private RoadPrefab _roadBlackPrefab;
     private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
@@ -43,7 +46,9 @@ public class RoadManager : MonoBehaviour
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
         bulidInput.OnRotObjectEvent += HandleRoatObject;
         buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
-        buildUI.SetActive(true);
+        buildObject.AddListener<BuildObjectCheck>(HandleBuildCheck);
+        selectUI.SetActive(true);
+        bulidUI.SetActive(false);
     }
 
     private void OnDestroy()
@@ -51,8 +56,14 @@ public class RoadManager : MonoBehaviour
         bulidInput.OnBuildPressed -= HandleClick;
         bulidInput.OnBuildModeChange -= HandleBuildModeChange;
         bulidInput.OnRotObjectEvent -= HandleRoatObject;
-        buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
+        buildObjectUI.RemoveListener<BuildObjectUI>(HadnleBuildObjectChange);
+        buildObject.RemoveListener<BuildObjectCheck>(HandleBuildCheck);
 
+    }
+
+    private void HandleBuildCheck(BuildObjectCheck check)
+    {
+        ConstructionMode = check.IsBuild;
     }
 
     private void Update()
@@ -62,7 +73,7 @@ public class RoadManager : MonoBehaviour
             Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
             if (_roadPrivePrefab == null)
             {
-                _roadPrivePrefab = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0, RotBuildObject, 0)); ;
+                _roadPrivePrefab = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0, RotBuildObject, 0));
             }
             center.y = 0.5f;
             _roadPrivePrefab.transform.position = center;
@@ -89,7 +100,8 @@ public class RoadManager : MonoBehaviour
             Destroy(_roadPrivePrefab.gameObject);
         }
         ConstructionMode = changeModeValue;
-        buildUI.SetActive(!changeModeValue);
+        selectUI.SetActive(!changeModeValue);
+        bulidUI.SetActive(changeModeValue);
     }
 
     private void HandleClick()
@@ -103,13 +115,14 @@ public class RoadManager : MonoBehaviour
                 Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
                 center.y = 0.5f;
                 RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
-                road.transform.SetParent(transform);
+                road.transform.SetParent(roadTrm);
                 road.IsBuilding = true;
                 if (!_isFirstBuilding)
                 {
                     _isFirstBuilding = true;
                 }
-
+                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost,true));
+                Destroy(_roadPrivePrefab.gameObject);
                 OnUpdateRoad?.Invoke();
             }
         }

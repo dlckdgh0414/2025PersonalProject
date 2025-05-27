@@ -135,6 +135,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseScrollY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ee3bad58-76d7-4b49-b175-bff258d1b854"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -311,6 +320,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""RotObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc9bff50-683c-4f67-b48c-25b9c180b73a"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MouseScrollY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -903,6 +923,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Build = m_Player.FindAction("Build", throwIfNotFound: true);
         m_Player_ChangeBuildMode = m_Player.FindAction("ChangeBuildMode", throwIfNotFound: true);
         m_Player_RotObject = m_Player.FindAction("RotObject", throwIfNotFound: true);
+        m_Player_MouseScrollY = m_Player.FindAction("MouseScrollY", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1001,6 +1022,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Build;
     private readonly InputAction m_Player_ChangeBuildMode;
     private readonly InputAction m_Player_RotObject;
+    private readonly InputAction m_Player_MouseScrollY;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1032,6 +1054,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/RotObject".
         /// </summary>
         public InputAction @RotObject => m_Wrapper.m_Player_RotObject;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/MouseScrollY".
+        /// </summary>
+        public InputAction @MouseScrollY => m_Wrapper.m_Player_MouseScrollY;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1073,6 +1099,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RotObject.started += instance.OnRotObject;
             @RotObject.performed += instance.OnRotObject;
             @RotObject.canceled += instance.OnRotObject;
+            @MouseScrollY.started += instance.OnMouseScrollY;
+            @MouseScrollY.performed += instance.OnMouseScrollY;
+            @MouseScrollY.canceled += instance.OnMouseScrollY;
         }
 
         /// <summary>
@@ -1099,6 +1128,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RotObject.started -= instance.OnRotObject;
             @RotObject.performed -= instance.OnRotObject;
             @RotObject.canceled -= instance.OnRotObject;
+            @MouseScrollY.started -= instance.OnMouseScrollY;
+            @MouseScrollY.performed -= instance.OnMouseScrollY;
+            @MouseScrollY.canceled -= instance.OnMouseScrollY;
         }
 
         /// <summary>
@@ -1434,6 +1466,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRotObject(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouseScrollY" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseScrollY(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
