@@ -17,7 +17,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
     [SerializeField] private LayerMask whatIsGround;
 
     public Vector2 MovementKey { get; private set; }
-    public bool IsBuildChannel { get; private set; } = false;
+    public bool IsBuildChannel { get; set; } = false;
 
     private Vector3 _worldPosition;
     private Vector2 _screenPosition;

@@ -3,7 +3,7 @@ using UnityEngine;
 public class WayPoints : MonoBehaviour
 {
 
-    private WayPoint[] _wayPoints;
+    [SerializeField]private WayPoint[] _wayPoints;
 
     public int Length => _wayPoints.Length;
 

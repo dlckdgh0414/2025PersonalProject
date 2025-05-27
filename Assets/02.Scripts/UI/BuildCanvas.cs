@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class BuildCanvas : MonoBehaviour
@@ -7,7 +8,11 @@ public class BuildCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private StageSettingSO stageSetting;
     [SerializeField] private GameEventChannelSO buildObject;
+    [SerializeField] private GameEventChannelSO playerEvent;
     private int _currentCost;
+
+    [SerializeField] private NavMeshSurface navMeshSurface;
+
 
     private void Awake()
     {
@@ -36,5 +41,12 @@ public class BuildCanvas : MonoBehaviour
         }
         buildObject.RaiseEvent(BuildEvents.BuildObjectCheck.Initializer(true));
 
+    }
+
+    public void StartButton()
+    {
+        playerEvent.RaiseEvent(PlayerEvents.StartPlayer.Initializer(true));
+        buildObject.RaiseEvent(BuildEvents.BuildObjectCheck.Initializer(false));
+        navMeshSurface.BuildNavMesh();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
- public class NavMovement : MonoBehaviour
+ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField] private NavMeshAgent agent;
@@ -10,7 +10,12 @@ using UnityEngine.AI;
 
     [SerializeField] private const float RotateSpeed = 10f;
 
-   public bool IsArrived => !agent.pathPending &&  agent.remainingDistance < agent.stoppingDistance + stopOffset;
+    private void Awake()
+    {
+        agent.speed = speed;
+    }
+
+    public bool IsArrived => !agent.pathPending &&  agent.remainingDistance < agent.stoppingDistance + stopOffset;
    public float RemainDistance => agent.pathPending ? -1 : agent.remainingDistance;
 
     public void SetStop(bool isStop) => agent.isStopped = isStop;

@@ -16,15 +16,16 @@ public class ChannelMake : MonoBehaviour
     private void OnDisable()
     {
         playerInput.OnBuildPressed -= HandelChannelBuild;
-        wayPoints.SetWayPoint();
     }
 
     private void HandelChannelBuild()
     {
+       Vector3 mousePos = playerInput.GetWorldPosition();
         if (playerInput.IsBuildChannel)
         {
-           _way = Instantiate(wayPoint,playerInput.GetWorldPosition() , Quaternion.identity);
+            _way = Instantiate(wayPoint,mousePos, Quaternion.identity);
             _way.transform.SetParent(wayPoints.transform);
+            playerInput.IsBuildChannel = false;
         }
     }
 }
