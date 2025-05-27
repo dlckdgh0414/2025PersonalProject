@@ -9,6 +9,7 @@ public class BuildCanvas : MonoBehaviour
     [SerializeField] private StageSettingSO stageSetting;
     [SerializeField] private GameEventChannelSO buildObject;
     [SerializeField] private GameEventChannelSO playerEvent;
+    [SerializeField] private GameObject starDeilveryUI;
     private int _currentCost;
 
     [SerializeField] private NavMeshSurface navMeshSurface;
@@ -48,5 +49,6 @@ public class BuildCanvas : MonoBehaviour
         playerEvent.RaiseEvent(PlayerEvents.StartPlayer.Initializer(true));
         buildObject.RaiseEvent(BuildEvents.BuildObjectCheck.Initializer(false));
         navMeshSurface.BuildNavMesh();
+        gameObject.SetActive(false);
     }
 }
