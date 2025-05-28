@@ -26,6 +26,7 @@ public class RoadManager : MonoBehaviour
     private HashSet<Vector3Int> _roadPoints;
     private MeshFilter _meshFilter;
     private bool _isFirstBuilding = false;
+    private bool _isBuilding = true;
 
     public bool ConstructionMode
     {
@@ -63,13 +64,14 @@ public class RoadManager : MonoBehaviour
 
     private void HandleBuildCheck(BuildObjectCheck check)
     {
-        ConstructionMode = check.IsBuild;
+        _isBuilding = check.IsBuild;
     }
 
     private void Update()
     {
-        if (ConstructionMode && _roadBlackPrefab != null)
+        if (ConstructionMode && _roadBlackPrefab != null && _isBuilding)
         {
+            buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost));
             Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
             if (_roadPrivePrefab == null)
             {
@@ -106,7 +108,7 @@ public class RoadManager : MonoBehaviour
 
     private void HandleClick()
     {
-        if (ConstructionMode == false || _roadBlackPrefab ==null) return;
+        if (ConstructionMode == false || _roadBlackPrefab ==null || _isBuilding == false) return;
 
         if (CanPlaceRoad(_roadPrivePrefab))
         {

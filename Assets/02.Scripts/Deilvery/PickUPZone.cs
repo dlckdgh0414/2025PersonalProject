@@ -8,6 +8,9 @@ public class PickUPZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        foodEvents.RaiseEvent(FoodEvents.FoodPickUPEvent.Initializer(true, foodSO));
+        if (other.CompareTag("Player"))
+        {
+            foodEvents.RaiseEvent(FoodEvents.FoodPickUPEvent.Initializer(true, foodSO));
+        }
     }
 }

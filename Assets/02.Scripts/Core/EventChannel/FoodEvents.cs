@@ -12,11 +12,8 @@ public class FoodPickUPEvent : GameEvent
 
     public FoodPickUPEvent Initializer(bool deliveryStart, DeilveryFoodSO foodSO)
     {
-        if(deliveryStart != true)
-        {
-            this.deliveryStart = deliveryStart;
-            this.foodSO = foodSO;
-        }
+        this.deliveryStart = deliveryStart;
+        this.foodSO = foodSO;
         return this;
     }
 }

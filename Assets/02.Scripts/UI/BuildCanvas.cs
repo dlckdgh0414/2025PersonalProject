@@ -49,6 +49,7 @@ public class BuildCanvas : MonoBehaviour
         playerEvent.RaiseEvent(PlayerEvents.StartPlayer.Initializer(true));
         buildObject.RaiseEvent(BuildEvents.BuildObjectCheck.Initializer(false));
         navMeshSurface.BuildNavMesh();
+        starDeilveryUI.SetActive(true);
         gameObject.SetActive(false);
     }
 }

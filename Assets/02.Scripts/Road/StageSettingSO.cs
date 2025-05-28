@@ -4,6 +4,5 @@ using UnityEngine;
 public class StageSettingSO : ScriptableObject
 {
     public int stageMaxCost;
-    public int DeliveryHouse;
-    public int ClaerDelivery;
+    public int MaxDeliveryHouse;
 }
