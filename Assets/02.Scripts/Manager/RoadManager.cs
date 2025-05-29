@@ -119,10 +119,6 @@ public class RoadManager : MonoBehaviour
                 RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
                 road.transform.SetParent(roadTrm);
                 road.IsBuilding = true;
-                if (!_isFirstBuilding)
-                {
-                    _isFirstBuilding = true;
-                }
                 buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost,true));
                 Destroy(_roadPrivePrefab.gameObject);
                 OnUpdateRoad?.Invoke();
@@ -139,12 +135,6 @@ public class RoadManager : MonoBehaviour
 
     public bool CanPlaceRoad(RoadPrefab roadPrefab)
     {
-        if (!_isFirstBuilding)
-        {
-            _isFirstBuilding = true;
-            return true;
-        }
-
         return roadPrefab.RoadCheck();
     }
 }

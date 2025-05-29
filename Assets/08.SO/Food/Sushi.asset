@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f207db56e35d13f4e8356e518274186b, type: 3}
-  m_Name: Stage1
+  m_Script: {fileID: 11500000, guid: ae0530b9488a15947b894cc54b2d4868, type: 3}
+  m_Name: Sushi
   m_EditorClassIdentifier: 
-  stageMaxCost: 45
-  MaxDeliveryHouse: 1
+  foodType: 5
+  foodName: Sushi
+  foodSprite: {fileID: 21300000, guid: 0b1813d22d4ff1e48b82769da388f887, type: 3}

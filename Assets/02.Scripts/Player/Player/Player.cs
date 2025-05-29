@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private WayPoints wayPoints;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GameEventChannelSO playerEvent;
+    [SerializeField] private Collider playerCnt;
     private bool _isStart = false;
     private int _currentPointIdx = 0;
 
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     {
         wayPoints.SetWayPoint();
         _isStart = evt.IsStart;
+        playerCnt.isTrigger = false;
     }
 
     public void Update()

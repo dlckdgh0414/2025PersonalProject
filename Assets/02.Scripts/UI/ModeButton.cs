@@ -5,7 +5,7 @@ public class ModeButton : MonoBehaviour
     [SerializeField] private GameObject roadMode;
     [SerializeField] private GameObject channelMode;
 
-    private void Awake()
+    private void OnEnable()
     {
         roadMode.SetActive(true);
         channelMode.SetActive(false);
