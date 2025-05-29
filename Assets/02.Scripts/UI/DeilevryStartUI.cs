@@ -13,7 +13,6 @@ public class DeilevryStartUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI deliveryHouseText;
     [SerializeField] private GameEventChannelSO deliveryClearEvent;
     [SerializeField] private GameEventChannelSO claerStageEvent;
-    private bool _isDeliveryStart = false;
     private float _sec = 0;
     private int _min = 0;
     private int _currentHouse = 0;
@@ -42,9 +41,6 @@ public class DeilevryStartUI : MonoBehaviour
 
     private void Update()
     {
-        if (_isDeliveryStart)
-        {
-           
             _sec += Time.deltaTime;
             if (_sec >= 60f)
             {
@@ -52,7 +48,6 @@ public class DeilevryStartUI : MonoBehaviour
                 _sec = 0;
             }
             deilevryTimeText.text = "배달 시간 : " + string.Format("{0:D2}:{1:D2}", _min, (int)_sec);
-        }
     }
     private void HandleClaerDelivery(DeliverySuccess evt)
     {
@@ -61,7 +56,7 @@ public class DeilevryStartUI : MonoBehaviour
         if(_currentHouse <= 0)
         {
             string str = string.Format("{0:D2}:{1:D2}", _min, (int)_sec);
-            claerStageEvent.RaiseEvent(StageEvents.StageClaerEvent.InInitializer(str ));
+            claerStageEvent.RaiseEvent(StageEvents.StageClaerEvent.InInitializer(str));
         }
     }
 
@@ -69,6 +64,5 @@ public class DeilevryStartUI : MonoBehaviour
     {
         foodImage.sprite = evt.foodSO.foodSprite;
         foodText.text = evt.foodSO.foodName;
-        _isDeliveryStart = evt.deliveryStart;
     }
 }
