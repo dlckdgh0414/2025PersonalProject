@@ -25,7 +25,6 @@ public class RoadManager : MonoBehaviour
 
     private HashSet<Vector3Int> _roadPoints;
     private MeshFilter _meshFilter;
-    private bool _isFirstBuilding = false;
     private bool _isBuilding = true;
 
     public bool ConstructionMode

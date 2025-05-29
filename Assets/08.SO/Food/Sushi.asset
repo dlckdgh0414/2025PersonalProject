@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodType: 5
   foodName: Sushi
-  foodSprite: {fileID: 21300000, guid: 0b1813d22d4ff1e48b82769da388f887, type: 3}
+  foodSprite: {fileID: 21300000, guid: 96b652fcbeb32c7428e5d0cc0b7346fc, type: 3}

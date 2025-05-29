@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0530b9488a15947b894cc54b2d4868, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  foodType: 0
+  foodType: 1
   foodName: Pizza
-  foodSprite: {fileID: 21300000, guid: 0b1813d22d4ff1e48b82769da388f887, type: 3}
+  foodSprite: {fileID: 21300000, guid: 41139f208cbc8274994d93621883ecf1, type: 3}
