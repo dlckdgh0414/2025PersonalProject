@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodType: 2
   foodName: Bread
-  foodSprite: {fileID: 21300000, guid: 0b1813d22d4ff1e48b82769da388f887, type: 3}
+  foodSprite: {fileID: 21300000, guid: cecb990ddc2900346a87d5151e6eee27, type: 3}
