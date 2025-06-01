@@ -37,6 +37,7 @@ public class PickDownZone : MonoBehaviour
         {
             foodEvent.RaiseEvent(FoodEvents.FoodPickUPEvent.Initializer(false, foodSo));
             deilevryClear.RaiseEvent(DeliveryEvents.DeliverySuccess.InInitializer(1));
+            Destroy(gameObject);
         }
     }
 }
