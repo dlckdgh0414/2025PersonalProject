@@ -4079,7 +4079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deliveryTimeText: {fileID: 7513901124245688725}
-  nextSceneIdx: 1
+  nextSceneIdx: 3
 --- !u!114 &3745054595690953965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6652,11 +6652,6 @@ MonoBehaviour:
   - {fileID: 7260141705325018637}
   - {fileID: 1285270800132522347}
   - {fileID: 2416936698767609675}
-  groundChecks:
-  - {fileID: 2298598156666855485}
-  - {fileID: 7260141705325018637}
-  - {fileID: 1285270800132522347}
-  - {fileID: 2416936698767609675}
   IsBuilding: 0
   whatIsRoad:
     serializedVersion: 2
@@ -8063,9 +8058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadChecks:
-  - {fileID: 7904128932483552519}
-  - {fileID: 3127262270388412803}
-  groundChecks:
   - {fileID: 7904128932483552519}
   - {fileID: 3127262270388412803}
   IsBuilding: 0

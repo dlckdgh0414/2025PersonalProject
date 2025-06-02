@@ -39,6 +39,7 @@ Transform:
   - {fileID: 1337385799266250091}
   - {fileID: 9194378861855659892}
   - {fileID: 5220931361336593439}
+  - {fileID: 5306766777560967450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3300000
@@ -141,7 +142,12 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsObj:
+    serializedVersion: 2
+    m_Bits: 1536
   distance: 0.5
+  boxSize: {x: 20.16, y: 1.76, z: 18.5}
+  ovrlapTrm: {fileID: 5306766777560967450}
 --- !u!1 &1129469182150144220
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +232,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.44411656, y: 0.2544957, z: 0.36611176}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2736496355229925380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5306766777560967450}
+  m_Layer: 9
+  m_Name: Ovrlap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5306766777560967450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736496355229925380}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3581607074567865739
 GameObject:
   m_ObjectHideFlags: 0
