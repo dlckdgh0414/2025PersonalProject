@@ -510,6 +510,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!4 &675158877 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2549807041957133836, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 5198713548224567807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1313392388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2764144906457827392, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
@@ -1330,6 +1335,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2764144906457827392, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 675158877}
+    - target: {fileID: 6397337200236052725, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397337200236052725, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7422067607423952799, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1670,6 +1687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Bakery
       objectReference: {fileID: 0}
+    - target: {fileID: 4115058402325599162, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
+      propertyPath: deilveryCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158005772269506871, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.84
@@ -1731,6 +1752,10 @@ PrefabInstance:
     - target: {fileID: 2664547648281668734, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_Name
       value: Building_Pizza
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395548206323510894, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
+      propertyPath: deilveryCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8237293004501769737, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_LocalPosition.x

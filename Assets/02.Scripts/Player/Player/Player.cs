@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
 
     private void HandleStartPlayer(StartPlayerEvent evt)
     {
-        wayPoints.SetWayPoint();
         _isStart = evt.IsStart;
         playerCnt.isTrigger = false;
     }

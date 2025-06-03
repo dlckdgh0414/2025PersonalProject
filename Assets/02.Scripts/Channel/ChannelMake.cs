@@ -1,4 +1,5 @@
 using System;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class ChannelMake : MonoBehaviour
@@ -27,5 +28,6 @@ public class ChannelMake : MonoBehaviour
             _way.transform.SetParent(wayPoints.transform);
             playerInput.IsBuildChannel = false;
         }
+        wayPoints.SetWayPoint();
     }
 }

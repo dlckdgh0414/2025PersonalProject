@@ -667,6 +667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 941808915580067795}
     m_Modifications:
+    - target: {fileID: 1253322772470245826, guid: 651b7bb2d681d16418860898887df085, type: 3}
+      propertyPath: deilveryCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6263134431399860110, guid: 651b7bb2d681d16418860898887df085, type: 3}
       propertyPath: m_Name
       value: Building_Coffee Shop
@@ -763,6 +767,10 @@ PrefabInstance:
     - target: {fileID: 991166220226464666, guid: 4dac81b5bdd92604983575c0367759f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636290116815912784, guid: 4dac81b5bdd92604983575c0367759f6, type: 3}
+      propertyPath: deilveryCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4961194147582290291, guid: 4dac81b5bdd92604983575c0367759f6, type: 3}
       propertyPath: m_Name

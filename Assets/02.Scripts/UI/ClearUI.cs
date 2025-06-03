@@ -8,6 +8,7 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI deliveryTimeText;
     [SerializeField] private int nextSceneIdx;
 
+
     public void SetDeliveryTime(string deliveryTime)
     {
         deliveryTimeText.text = "배달 시간 : " + deliveryTime;
@@ -16,5 +17,10 @@ public class ClearUI : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(nextSceneIdx);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
