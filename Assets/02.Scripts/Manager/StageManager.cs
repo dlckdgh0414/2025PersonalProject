@@ -20,6 +20,6 @@ public class StageManager : MonoBehaviour
     private void HandleClearStageEvent(StageClaerEvent evt)
     {
         stageClaerUI.gameObject.SetActive(true);
-        stageClaerUI.SetDeliveryTime(evt.time);
+        stageClaerUI.SetDeliveryTime(evt.timeText,evt.minTime,evt.secTime);
     }
 }

@@ -7,11 +7,15 @@ public static class StageEvents
 
 public class StageClaerEvent : GameEvent
 {
-    public string time;
+    public string timeText;
+    public float minTime;
+    public float secTime;
 
-    public StageClaerEvent InInitializer(string time)
+    public StageClaerEvent InInitializer(string time,float minTime,float secTime)
     {
-        this.time = time;
+        this.minTime = minTime;
+        this.secTime = secTime;
+        this.timeText = time;
         return this;
     }
 }

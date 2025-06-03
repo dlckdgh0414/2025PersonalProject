@@ -56,7 +56,7 @@ public class DeilevryStartUI : MonoBehaviour
         if(_currentHouse <= 0)
         {
             string str = string.Format("{0:D2}:{1:D2}", _min, (int)_sec);
-            claerStageEvent.RaiseEvent(StageEvents.StageClaerEvent.InInitializer(str));
+            claerStageEvent.RaiseEvent(StageEvents.StageClaerEvent.InInitializer(str,_min,_sec));
         }
     }
 
