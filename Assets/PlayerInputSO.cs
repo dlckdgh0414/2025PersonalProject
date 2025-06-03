@@ -11,6 +11,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
     public Action<bool> OnBuildModeChange;
     public Action OnRotObjectEvent;
     public Action<float> OnZoomOutCamEvent;
+    public Action OnDelRoadEvent;
 
     private InputSystem_Actions _controls;
 
@@ -109,5 +110,13 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
     {
         float scroll = context.ReadValue<float>();
         OnZoomOutCamEvent?.Invoke(scroll);
+    }
+
+    public void OnDelRoad(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnDelRoadEvent?.Invoke();
+        }
     }
 }

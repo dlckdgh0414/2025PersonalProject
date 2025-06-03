@@ -17,11 +17,20 @@ public class BuildCanvas : MonoBehaviour
         costText.text = "Cost : " + stageSetting.stageMaxCost;
         _currentCost = stageSetting.stageMaxCost;
         buildObject.AddListener<BuildObject>(HandleBuildCostDown);
+        buildObject.AddListener<DelObject>(HandleDelObject);
     }
 
     private void OnDestroy()
     {
         buildObject.RemoveListener<BuildObject>(HandleBuildCostDown);
+        buildObject.RemoveListener<DelObject>(HandleDelObject);
+    }
+
+    private void HandleDelObject(DelObject evt)
+    {
+        _currentCost += evt.buildCost;
+        Mathf.Clamp(_currentCost - evt.buildCost, 0, _currentCost);
+        costText.text = "Cost : " + _currentCost;
     }
 
     private void HandleBuildCostDown(BuildObject evt)

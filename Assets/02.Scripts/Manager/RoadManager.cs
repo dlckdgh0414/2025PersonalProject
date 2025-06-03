@@ -17,6 +17,8 @@ public class RoadManager : MonoBehaviour
     private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
     private int _buildCost;
+    private RoadPrefab _currentroad = null;
+    private Stack<RoadPrefab> _roadHistory = new Stack<RoadPrefab>();
 
     public UnityEvent<bool> OnConstructionModeChage;
     public UnityEvent OnUpdateRoad;
@@ -45,6 +47,7 @@ public class RoadManager : MonoBehaviour
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
         bulidInput.OnRotObjectEvent += HandleRoatObject;
+        bulidInput.OnDelRoadEvent += HandleDelRoad;
         buildObjectUI.AddListener<BuildObjectUI>(HadnleBuildObjectChange);
         buildObject.AddListener<BuildObjectCheck>(HandleBuildCheck);
         selectUI.SetActive(true);
@@ -56,9 +59,23 @@ public class RoadManager : MonoBehaviour
         bulidInput.OnBuildPressed -= HandleClick;
         bulidInput.OnBuildModeChange -= HandleBuildModeChange;
         bulidInput.OnRotObjectEvent -= HandleRoatObject;
+        bulidInput.OnDelRoadEvent -= HandleDelRoad;
         buildObjectUI.RemoveListener<BuildObjectUI>(HadnleBuildObjectChange);
         buildObject.RemoveListener<BuildObjectCheck>(HandleBuildCheck);
 
+    }
+
+    private void HandleDelRoad()
+    {
+        if (_roadHistory.Count > 0)
+        {
+            RoadPrefab roadToDelete = _roadHistory.Pop();
+            Vector3Int cell = mapGrid.WorldToCell(roadToDelete.transform.position);
+            _roadPoints.Remove(cell);
+
+            buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(_buildCost));
+            Destroy(roadToDelete.gameObject);
+        }
     }
 
     private void HandleBuildCheck(BuildObjectCheck check)
@@ -115,9 +132,10 @@ public class RoadManager : MonoBehaviour
             {
                 Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
                 center.y = 0.5f;
-                RoadPrefab road = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
-                road.transform.SetParent(roadTrm);
-                road.IsBuilding = true;
+                _currentroad = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
+                _currentroad.transform.SetParent(roadTrm);
+                _currentroad.IsBuilding = true;
+                _roadHistory.Push(_currentroad);
                 buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost,true));
                 Destroy(_roadPrivePrefab.gameObject);
                 OnUpdateRoad?.Invoke();

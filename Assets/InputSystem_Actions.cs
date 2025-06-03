@@ -144,6 +144,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DelRoad"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea592fab-d71b-426e-ab5a-27899d75e86c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""MouseScrollY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""6470ca68-f5b4-4085-a2e5-ac63946a3282"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DelRoad"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""ec8ae9cf-0278-4ec2-88bd-2414c3fd039c"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DelRoad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""6c55eca5-1c7f-469e-810f-c13cb4312c40"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DelRoad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -924,6 +966,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_ChangeBuildMode = m_Player.FindAction("ChangeBuildMode", throwIfNotFound: true);
         m_Player_RotObject = m_Player.FindAction("RotObject", throwIfNotFound: true);
         m_Player_MouseScrollY = m_Player.FindAction("MouseScrollY", throwIfNotFound: true);
+        m_Player_DelRoad = m_Player.FindAction("DelRoad", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1023,6 +1066,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ChangeBuildMode;
     private readonly InputAction m_Player_RotObject;
     private readonly InputAction m_Player_MouseScrollY;
+    private readonly InputAction m_Player_DelRoad;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1058,6 +1102,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/MouseScrollY".
         /// </summary>
         public InputAction @MouseScrollY => m_Wrapper.m_Player_MouseScrollY;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/DelRoad".
+        /// </summary>
+        public InputAction @DelRoad => m_Wrapper.m_Player_DelRoad;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1102,6 +1150,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouseScrollY.started += instance.OnMouseScrollY;
             @MouseScrollY.performed += instance.OnMouseScrollY;
             @MouseScrollY.canceled += instance.OnMouseScrollY;
+            @DelRoad.started += instance.OnDelRoad;
+            @DelRoad.performed += instance.OnDelRoad;
+            @DelRoad.canceled += instance.OnDelRoad;
         }
 
         /// <summary>
@@ -1131,6 +1182,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouseScrollY.started -= instance.OnMouseScrollY;
             @MouseScrollY.performed -= instance.OnMouseScrollY;
             @MouseScrollY.canceled -= instance.OnMouseScrollY;
+            @DelRoad.started -= instance.OnDelRoad;
+            @DelRoad.performed -= instance.OnDelRoad;
+            @DelRoad.canceled -= instance.OnDelRoad;
         }
 
         /// <summary>
@@ -1473,6 +1527,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouseScrollY(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DelRoad" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDelRoad(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

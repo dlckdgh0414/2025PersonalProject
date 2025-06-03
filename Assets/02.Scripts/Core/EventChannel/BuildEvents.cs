@@ -4,6 +4,7 @@ public static class BuildEvents
 {
     public static BuildObject BuildObject = new BuildObject();
     public static BuildObjectCheck BuildObjectCheck = new BuildObjectCheck();
+    public static DelObject DelObject = new DelObject();
 }
 
 public class  BuildObject : GameEvent
@@ -24,6 +25,17 @@ public class BuildObjectCheck : GameEvent
     public BuildObjectCheck Initializer(bool isBuild)
     {
         this.IsBuild = isBuild;
+        return this;
+    }
+}
+
+public class DelObject : GameEvent
+{
+    public int buildCost;
+
+    public DelObject Initializer(int buildCost)
+    {
+        this.buildCost = buildCost;
         return this;
     }
 }
