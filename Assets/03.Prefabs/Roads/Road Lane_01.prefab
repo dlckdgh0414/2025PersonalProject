@@ -132,9 +132,6 @@ MonoBehaviour:
   roadChecks:
   - {fileID: 1022554953947498534}
   - {fileID: 6695158600990548163}
-  groundChecks:
-  - {fileID: 1022554953947498534}
-  - {fileID: 6695158600990548163}
   IsBuilding: 0
   whatIsRoad:
     serializedVersion: 2
@@ -142,12 +139,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsObj:
-    serializedVersion: 2
-    m_Bits: 1536
   distance: 0.5
-  boxSize: {x: 20.16, y: 1.76, z: 18.5}
-  ovrlapTrm: {fileID: 5306766777560967450}
 --- !u!1 &1129469182150144220
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +323,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 1.53, y: 0, z: 0}
+  m_Center: {x: 1.3, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &4688849201471340205
 GameObject:

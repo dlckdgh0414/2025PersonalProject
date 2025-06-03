@@ -1011,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2764144906457827392, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: navMeshSurface
+      value: 
+      objectReference: {fileID: 7857150274204573564}
     - target: {fileID: 7422067607423952799, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1511,7 +1515,6 @@ MonoBehaviour:
   buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
   playerEvent: {fileID: 11400000, guid: 6dac5263c5baae84f811e7a20642e7d0, type: 2}
   starDeilveryUI: {fileID: 6887428408182247145}
-  navMeshSurface: {fileID: 7857150274204573564}
   selectUI: {fileID: 3383105502076037145}
 --- !u!114 &514897489589367825
 MonoBehaviour:

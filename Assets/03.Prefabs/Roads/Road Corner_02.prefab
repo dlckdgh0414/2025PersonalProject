@@ -110,9 +110,6 @@ MonoBehaviour:
   roadChecks:
   - {fileID: 7904128931068356423}
   - {fileID: 3127262269639873475}
-  groundChecks:
-  - {fileID: 7904128931068356423}
-  - {fileID: 3127262269639873475}
   IsBuilding: 0
   whatIsRoad:
     serializedVersion: 2
@@ -120,12 +117,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsObj:
-    serializedVersion: 2
-    m_Bits: 1536
   distance: 0.5
-  boxSize: {x: 17.6, y: 1.52, z: 16.3}
-  ovrlapTrm: {fileID: 5347785482744659996}
 --- !u!64 &6812636674656653723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -485,5 +477,5 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.59, y: 0, z: 0}
   m_TimeToStationary: 0.5
