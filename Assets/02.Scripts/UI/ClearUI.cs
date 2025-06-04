@@ -31,7 +31,7 @@ public class ClearUI : MonoBehaviour
 
         if (minTime <= threestarsMin && secTime < threestarsSec)
             starCount = 3;
-        else if (minTime < twostarsMin && secTime < twostarsSec)
+        else if (minTime <= twostarsMin && secTime < twostarsSec)
             starCount = 2;
 
         ShowStarsAnimated(starCount);

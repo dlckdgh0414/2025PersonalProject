@@ -70,6 +70,11 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
             {
                 IsBuildChannel = false;
             }
+
+            if (hit.collider.TryGetComponent(out GimmickToolTip gimmick))
+            {
+                gimmick.RaiseGimickToolTip();
+            }
             _worldPosition = hit.point;
         }
 

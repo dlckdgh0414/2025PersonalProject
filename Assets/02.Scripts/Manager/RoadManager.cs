@@ -13,6 +13,7 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private GameEventChannelSO buildObject;
     [SerializeField] private GameObject selectUI;
     [SerializeField] private GameObject bulidUI;
+    [SerializeField] private GameObject tooltipUI;
     private RoadPrefab _roadBlackPrefab;
     private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
@@ -119,6 +120,7 @@ public class RoadManager : MonoBehaviour
         }
         ConstructionMode = changeModeValue;
         selectUI.SetActive(!changeModeValue);
+        tooltipUI.SetActive(!changeModeValue);
         bulidUI.SetActive(changeModeValue);
     }
 
@@ -152,6 +154,6 @@ public class RoadManager : MonoBehaviour
 
     public bool CanPlaceRoad(RoadPrefab roadPrefab)
     {
-        return roadPrefab.RoadCheck();
+        return roadPrefab.isRoad;
     }
 }

@@ -38,6 +38,14 @@ public class RoadPrefab : MonoBehaviour
         return false;
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (isRoad)
+        {
+            isRoad = false;      
+        }
+    }
+
 
 #if UNITY_EDITOR
 
