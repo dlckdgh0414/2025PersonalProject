@@ -1,6 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
+using System;
 
 public class ClearUI : MonoBehaviour
 {
@@ -9,24 +12,45 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private int nextSceneIdx;
     [SerializeField] private float threestarsMin,threestarsSec;
     [SerializeField] private float twostarsMin, twostarsSec;
+    [SerializeField] private Image[] stars;
+
+    private void Awake()
+    {
+        foreach (var star in stars)
+        {
+            star.transform.localScale = Vector3.zero;
+            star.gameObject.SetActive(false);
+        }
+    }
 
 
     public void SetDeliveryTime(string deliveryTime , float minTime,float secTime)
     {
         deliveryTimeText.text = "배달 시간 : " + deliveryTime;
-        if(minTime <= threestarsMin && secTime < threestarsSec)
-        {
-            Debug.Log("별3개");
-        }
-        else if(minTime  < twostarsMin && secTime < twostarsSec)
-        {
-            Debug.Log("별2개");
+        int starCount = 1;
 
-        }
-        else
-        {
-            Debug.Log("별1개");
+        if (minTime <= threestarsMin && secTime < threestarsSec)
+            starCount = 3;
+        else if (minTime < twostarsMin && secTime < twostarsSec)
+            starCount = 2;
 
+        ShowStarsAnimated(starCount);
+    }
+
+    private void ShowStarsAnimated(int count)
+    {
+        float delay = 0f;
+        for (int i = 0; i < count && i < stars.Length; i++)
+        {
+            Image star = stars[i];
+            star.gameObject.SetActive(true);
+            star.transform.localScale = Vector3.zero;
+
+            star.transform.DOScale(Vector3.one, 0.4f)
+                .SetDelay(delay)
+                .SetEase(Ease.OutBack);
+
+            delay += 0.8f;
         }
     }
 
