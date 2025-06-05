@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -20,8 +21,9 @@ public class Player : MonoBehaviour
         playerEvent.RemoveListener<StartPlayerEvent>(HandleStartPlayer);
     }
 
-    private void HandleStartPlayer(StartPlayerEvent evt)
+    private async void HandleStartPlayer(StartPlayerEvent evt)
     {
+        await Awaitable.WaitForSecondsAsync(2f);
         _isStart = evt.IsStart;
         playerCnt.isTrigger = false;
     }
