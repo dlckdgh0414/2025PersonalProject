@@ -23,6 +23,11 @@ public class ClearUI : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Time.timeScale = 1;
+    }
+
 
     public void SetDeliveryTime(string deliveryTime , float minTime,float secTime)
     {

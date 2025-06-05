@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
+using DG.Tweening;
 
 [RequireComponent(typeof(LineRenderer))]
 public class WayPoints : MonoBehaviour
@@ -22,12 +23,27 @@ public class WayPoints : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _agent = player.GetComponent<NavMeshAgent>();
 
+
         _lineRenderer.enabled = false;
         _lineRenderer.material = channelMat;
         _lineRenderer.textureMode = LineTextureMode.Tile;
-        _lineRenderer.startWidth = 2f;
-        _lineRenderer.endWidth = 2f;
+        _lineRenderer.alignment = LineAlignment.TransformZ;
+        _lineRenderer.alignment = LineAlignment.View;
+        _lineRenderer.numCornerVertices = 5;
+        _lineRenderer.numCapVertices = 3;
+
+        _lineRenderer.startWidth = 0.4f;
+        _lineRenderer.endWidth = 0.4f;
+        _lineRenderer.startColor = Color.yellow;
+        _lineRenderer.endColor = Color.yellow;
+        _lineRenderer.material.color = Color.yellow;
     }
+
+    private void Update()
+    {
+    }
+
+
 
     public void SetWayPoint()
     {
@@ -49,10 +65,12 @@ public class WayPoints : MonoBehaviour
             NavMeshPath path = new NavMeshPath();
             if (NavMesh.CalculatePath(currentPos, wp.transform.position, NavMesh.AllAreas, path))
             {
-                if (fullPathPoints.Count > 0 && fullPathPoints[^1] == path.corners[0])
-                    fullPathPoints.AddRange(path.corners[1..]);
+                List<Vector3> smooth = CatmullRomPath(path.corners, 10);
+
+                if (fullPathPoints.Count > 0 && fullPathPoints[^1] == smooth[0])
+                    fullPathPoints.AddRange(smooth.GetRange(1, smooth.Count - 1));
                 else
-                    fullPathPoints.AddRange(path.corners);
+                    fullPathPoints.AddRange(smooth);
 
                 currentPos = wp.transform.position;
             }
@@ -62,12 +80,35 @@ public class WayPoints : MonoBehaviour
 
         _lineRenderer.positionCount = fullPathPoints.Count;
         _lineRenderer.SetPositions(fullPathPoints.ToArray());
-
-        float totalLength = 0f;
-        for (int i = 1; i < fullPathPoints.Count; i++)
-            totalLength += Vector3.Distance(fullPathPoints[i - 1], fullPathPoints[i]);
-
-        _lineRenderer.material.mainTextureScale = new Vector2(totalLength, 1);
         _lineRenderer.enabled = true;
+    }
+
+    private List<Vector3> CatmullRomPath(Vector3[] corners, int resolution = 10)
+    {
+        List<Vector3> smoothPoints = new List<Vector3>();
+
+        for (int i = 0; i < corners.Length - 1; i++)
+        {
+            Vector3 p0 = i == 0 ? corners[i] : corners[i - 1];
+            Vector3 p1 = corners[i];
+            Vector3 p2 = corners[i + 1];
+            Vector3 p3 = i + 2 < corners.Length ? corners[i + 2] : corners[i + 1];
+
+            for (int j = 0; j < resolution; j++)
+            {
+                float t = j / (float)resolution;
+                Vector3 point = 0.5f * (
+                    2f * p1 +
+                    (-p0 + p2) * t +
+                    (2f * p0 - 5f * p1 + 4f * p2 - p3) * (t * t) +
+                    (-p0 + 3f * p1 - 3f * p2 + p3) * (t * t * t)
+                );
+
+                smoothPoints.Add(point);
+            }
+        }
+
+        smoothPoints.Add(corners[^1]); 
+        return smoothPoints;
     }
 }
