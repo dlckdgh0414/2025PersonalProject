@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PickDownZone : MonoBehaviour
@@ -7,6 +8,7 @@ public class PickDownZone : MonoBehaviour
     [SerializeField] private DeilveryFoodSO foodSo;
     [SerializeField] private GameEventChannelSO deilevryClear;
     [SerializeField] private FoodEnum foodType;
+    [SerializeField] private ParticleSystem deilveryEffect;
     private bool _isPickDown;
 
     private void Awake()
@@ -31,12 +33,14 @@ public class PickDownZone : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private async void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")&& _isPickDown)
         {
             foodEvent.RaiseEvent(FoodEvents.FoodPickUPEvent.Initializer(false, foodSo));
             deilevryClear.RaiseEvent(DeliveryEvents.DeliverySuccess.InInitializer(1));
+            deilveryEffect.Play();
+            await Awaitable.WaitForSecondsAsync(1f);
             Destroy(gameObject);
         }
     }

@@ -32,8 +32,8 @@ public class WayPoints : MonoBehaviour
         _lineRenderer.numCornerVertices = 5;
         _lineRenderer.numCapVertices = 3;
 
-        _lineRenderer.startWidth = 0.4f;
-        _lineRenderer.endWidth = 0.4f;
+        _lineRenderer.startWidth = 0.8f;
+        _lineRenderer.endWidth = 0.8f;
         _lineRenderer.startColor = Color.yellow;
         _lineRenderer.endColor = Color.yellow;
         _lineRenderer.material.color = Color.yellow;
