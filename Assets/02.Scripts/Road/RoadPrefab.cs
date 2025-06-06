@@ -28,7 +28,7 @@ public class RoadPrefab : MonoBehaviour
         {
             if (Physics.Raycast(check.position, check.forward, out RaycastHit hit, distance, whatIsRoad))
             {
-                if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitGround, 0.6f, whatIsGround))
+                if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitGround, 0.9f, whatIsGround))
                 {
                     return true;
                 }
