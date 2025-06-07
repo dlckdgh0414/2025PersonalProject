@@ -3,9 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [SerializeField] private GameEventChannelSO sceneChangeEvent;
+
    public void PlayBnt()
     {
-        SceneManager.LoadScene(1);
+        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(1));
     }
 
     public void OutBnt()

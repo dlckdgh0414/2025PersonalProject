@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GameEventChannelSO playerEvent;
     [SerializeField] private Collider playerCnt;
+    [SerializeField] private bool isLoop;
     private bool _isStart = false;
     private int _currentPointIdx = 0;
 
@@ -30,17 +31,31 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        if (_isStart)
+        if (isLoop)
         {
             playerMovement.SetDestination(wayPoints[_currentPointIdx].position);
             if (playerMovement.IsArrived)
             {
                 _currentPointIdx++;
-                if(_currentPointIdx >= wayPoints.Length)
+                if (_currentPointIdx >= wayPoints.Length)
+                {
+                    _currentPointIdx = (_currentPointIdx + 1) % wayPoints.Length;
+                }
+            }
+        }
+        if (_isStart)
+        {
+            playerMovement.SetDestination(wayPoints[_currentPointIdx].position);
+            if (playerMovement.IsArrived && !isLoop)
+            {
+                _currentPointIdx++;
+                if (_currentPointIdx >= wayPoints.Length)
                 {
                     _currentPointIdx--;
                 }
             }
+           
         }
+
     }
 }

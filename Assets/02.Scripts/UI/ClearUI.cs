@@ -13,6 +13,7 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private float threestarsMin,threestarsSec;
     [SerializeField] private float twostarsMin, twostarsSec;
     [SerializeField] private Image[] stars;
+    [SerializeField] private GameEventChannelSO sceneChangeEvent;
 
     private void Awake()
     {
@@ -61,11 +62,11 @@ public class ClearUI : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(nextSceneIdx);
+        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(nextSceneIdx));
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(0));
     }
 }
