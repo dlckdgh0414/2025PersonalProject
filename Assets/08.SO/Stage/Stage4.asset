@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stage4
   m_EditorClassIdentifier: 
   stageMaxCost: 130
-  MaxDeliveryHouse: 5
+  MaxDeliveryHouse: 6
