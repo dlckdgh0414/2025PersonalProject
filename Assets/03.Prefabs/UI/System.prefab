@@ -268,6 +268,7 @@ MonoBehaviour:
   playerEvent: {fileID: 11400000, guid: 6dac5263c5baae84f811e7a20642e7d0, type: 2}
   starDeilveryUI: {fileID: 6887428406497433735}
   selectUI: {fileID: 3383105503746637431}
+  came: {fileID: 0}
 --- !u!1 &427332944206770097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,9 +2620,9 @@ Transform:
   - {fileID: 5426856131498962177}
   - {fileID: 6402091571769677412}
   - {fileID: 4700725845513239837}
+  - {fileID: 7296598124334649786}
   - {fileID: 907115689594501200}
   - {fileID: 3179693451887501500}
-  - {fileID: 7296598124334649786}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1634224328021803124
@@ -4721,6 +4722,7 @@ MonoBehaviour:
   - {fileID: 4314215130551499432}
   - {fileID: 6731990495783767187}
   - {fileID: 6680718686701976241}
+  followCam: {fileID: 0}
 --- !u!1 &6963027776307399415
 GameObject:
   m_ObjectHideFlags: 0
