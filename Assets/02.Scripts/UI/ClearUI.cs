@@ -35,9 +35,9 @@ public class ClearUI : MonoBehaviour
         deliveryTimeText.text = "배달 시간 : " + deliveryTime;
         int starCount = 1;
 
-        if (minTime <= threestarsMin && secTime < threestarsSec)
+        if (minTime <= threestarsMin && secTime <= threestarsSec)
             starCount = 3;
-        else if (minTime <= twostarsMin && secTime < twostarsSec)
+        else if (minTime <= twostarsMin && secTime <= twostarsSec)
             starCount = 2;
 
         ShowStarsAnimated(starCount);

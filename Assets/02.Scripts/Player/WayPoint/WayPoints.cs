@@ -65,7 +65,9 @@ public class WayPoints : MonoBehaviour
             NavMeshPath path = new NavMeshPath();
             if (NavMesh.CalculatePath(currentPos, wp.transform.position, NavMesh.AllAreas, path))
             {
-                List<Vector3> smooth = CatmullRomPath(path.corners, 10);
+                Vector3[] rawCorners = path.corners;
+                List<Vector3> smooth = BezierSmooth(rawCorners, 4);
+
 
                 if (fullPathPoints.Count > 0 && fullPathPoints[^1] == smooth[0])
                     fullPathPoints.AddRange(smooth.GetRange(1, smooth.Count - 1));
@@ -83,32 +85,38 @@ public class WayPoints : MonoBehaviour
         _lineRenderer.enabled = true;
     }
 
-    private List<Vector3> CatmullRomPath(Vector3[] corners, int resolution = 10)
+    private List<Vector3> BezierSmooth(Vector3[] corners, int steps = 5)
     {
-        List<Vector3> smoothPoints = new List<Vector3>();
-
+        var pts = new List<Vector3>();
         for (int i = 0; i < corners.Length - 1; i++)
         {
-            Vector3 p0 = i == 0 ? corners[i] : corners[i - 1];
-            Vector3 p1 = corners[i];
-            Vector3 p2 = corners[i + 1];
-            Vector3 p3 = i + 2 < corners.Length ? corners[i + 2] : corners[i + 1];
+            Vector3 a = corners[i];
+            Vector3 b = corners[i + 1];
+            Vector3 mid = (a + b) * 0.5f;
+            Vector3 dir = (b - a).normalized;
+            Vector3 perp = Vector3.Cross(dir, Vector3.up) * 0.3f;
 
-            for (int j = 0; j < resolution; j++)
+            Vector3 cp1 = mid + perp;
+            Vector3 cp2 = mid - perp;
+
+            for (int j = 0; j <= steps; j++)
             {
-                float t = j / (float)resolution;
-                Vector3 point = 0.5f * (
-                    2f * p1 +
-                    (-p0 + p2) * t +
-                    (2f * p0 - 5f * p1 + 4f * p2 - p3) * (t * t) +
-                    (-p0 + 3f * p1 - 3f * p2 + p3) * (t * t * t)
-                );
+                float t = j / (float)steps;
+                Vector3 p = Mathf.Pow(1 - t, 3) * a +
+                            3 * Mathf.Pow(1 - t, 2) * t * cp1 +
+                            3 * (1 - t) * Mathf.Pow(t, 2) * cp2 +
+                            Mathf.Pow(t, 3) * b;
 
-                smoothPoints.Add(point);
+                if (pts.Count == 0 || Vector3.Distance(pts[^1], p) > 0.01f)
+                    pts.Add(p);
             }
         }
 
-        smoothPoints.Add(corners[^1]); 
-        return smoothPoints;
+        if (pts.Count == 0 || Vector3.Distance(pts[^1], corners[^1]) > 0.01f)
+            pts.Add(corners[^1]);
+
+        return pts;
     }
+
+
 }

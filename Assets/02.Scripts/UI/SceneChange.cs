@@ -18,6 +18,13 @@ public class SceneChange : MonoBehaviour
         scooterImg.gameObject.SetActive(false);
 
         sceneChangeEvent.AddListener<SceneChnages>(HandleSceneChange);
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+    }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        fadeImage.color = Color.black;
+        fadeImage.DOFade(0, 1f).SetEase(Ease.InOutSine);
     }
 
     private void HandleSceneChange(SceneChnages evt)
@@ -38,5 +45,6 @@ public class SceneChange : MonoBehaviour
     private void OnDisable()
     {
         sceneChangeEvent.RemoveListener<SceneChnages>(HandleSceneChange);
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
     }
 }
