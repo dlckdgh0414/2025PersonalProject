@@ -108,8 +108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadChecks:
   - {fileID: 1523870488266957839}
-  groundChecks:
-  - {fileID: 400000}
   IsBuilding: 0
   whatIsRoad:
     serializedVersion: 2
@@ -117,12 +115,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsObj:
-    serializedVersion: 2
-    m_Bits: 1536
   distance: 0.5
-  boxSize: {x: 20.36, y: 3.9, z: 5.51}
-  ovrlapTrm: {fileID: 7915678297781649777}
 --- !u!64 &2118864560174942200
 MeshCollider:
   m_ObjectHideFlags: 0

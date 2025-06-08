@@ -38,11 +38,11 @@ public class RoadPrefab : MonoBehaviour
         return false;
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (isRoad)
+        if (other.gameObject.CompareTag("Building"))
         {
-            isRoad = false;      
+            isRoad = false;
         }
     }
 

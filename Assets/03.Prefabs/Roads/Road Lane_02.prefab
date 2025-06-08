@@ -114,10 +114,6 @@ MonoBehaviour:
   - {fileID: 1671088228332113530}
   - {fileID: 5195191753266383313}
   - {fileID: 6656505180984341611}
-  groundChecks:
-  - {fileID: 1671088228332113530}
-  - {fileID: 5195191753266383313}
-  - {fileID: 6656505180984341611}
   IsBuilding: 0
   whatIsRoad:
     serializedVersion: 2
@@ -125,12 +121,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsObj:
-    serializedVersion: 2
-    m_Bits: 1536
   distance: 0.5
-  boxSize: {x: 20.06, y: 1.43, z: 19.7}
-  ovrlapTrm: {fileID: 5302226759631697456}
 --- !u!64 &2587342349308824751
 MeshCollider:
   m_ObjectHideFlags: 0
