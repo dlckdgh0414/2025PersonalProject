@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 403.01, y: 40.208607, z: 403.01}
+  size: {x: 303.01, y: 40.208607, z: 306.14062}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -760,7 +760,7 @@ Transform:
   m_GameObject: {fileID: 1069316163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48, y: 18.599203, z: 25}
+  m_LocalPosition: {x: -2, y: 18.599203, z: -23.434692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -886,7 +886,7 @@ Transform:
   m_GameObject: {fileID: 1660519215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9616773, z: -0, w: 0.27418405}
-  m_LocalPosition: {x: -98, y: 0, z: 116.3}
+  m_LocalPosition: {x: -96.1, y: 0, z: 113.3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
