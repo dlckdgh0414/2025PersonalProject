@@ -15,7 +15,6 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private GameObject selectUI;
     [SerializeField] private GameObject bulidUI;
     [SerializeField] private GameObject tooltipUI;
-    [SerializeField] private Transform[] buildings;
     private RoadPrefab _roadBlackPrefab;
     private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
@@ -47,12 +46,6 @@ public class RoadManager : MonoBehaviour
         _roadPoints = new HashSet<Vector3Int>();
         _meshFilter = GetComponent<MeshFilter>();
         _meshFilter.mesh = new Mesh();
-
-        for(int i = 0; i < buildings.Length; i++)
-        {
-            Vector3Int cell = mapGrid.WorldToCell(buildings[i].position);
-            _roadPoints.Add(cell);
-        }
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
         bulidInput.OnRotObjectEvent += HandleRoatObject;

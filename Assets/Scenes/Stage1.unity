@@ -571,6 +571,10 @@ PrefabInstance:
       value: Building Sky_small_color02
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -810,6 +814,10 @@ PrefabInstance:
       value: Building Sky_small_color02 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -891,7 +899,7 @@ GameObject:
   - component: {fileID: 1660519218}
   - component: {fileID: 1660519217}
   - component: {fileID: 1660519219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color02 (2)
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1009,6 +1017,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_Name
       value: Building Sky_small_color02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1137,7 +1149,7 @@ GameObject:
   - component: {fileID: 7841570260616299766}
   - component: {fileID: 2026528877568492340}
   - component: {fileID: 7841570260616299767}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color01 (2)
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1286,7 +1298,7 @@ GameObject:
   - component: {fileID: 2790887970433800662}
   - component: {fileID: 4070366600633299297}
   - component: {fileID: 7267680169234420255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color02 (1)
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1308,6 +1320,10 @@ PrefabInstance:
     - target: {fileID: 2664547648281668734, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_Name
       value: Building_Pizza
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664547648281668734, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2664547648281668734, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_TagString
@@ -1412,7 +1428,7 @@ GameObject:
   - component: {fileID: 4627691245237365596}
   - component: {fileID: 3202996988759389116}
   - component: {fileID: 4757295206284786726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color01 (1)
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1473,7 +1489,7 @@ GameObject:
   - component: {fileID: 6846309621222726665}
   - component: {fileID: 2619398395923562646}
   - component: {fileID: 6846309621222726666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Residential_color02
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1569,7 +1585,7 @@ GameObject:
   - component: {fileID: 4156334733258718874}
   - component: {fileID: 361034628308736332}
   - component: {fileID: 8774303583501959257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_04_color03
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -1701,6 +1717,10 @@ PrefabInstance:
     - target: {fileID: 3403492876754550379, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: m_Name
       value: Building_Bakery
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403492876754550379, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3403492876754550379, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: m_TagString
@@ -2677,7 +2697,7 @@ GameObject:
   - component: {fileID: 693225438450212795}
   - component: {fileID: 2879053343504097492}
   - component: {fileID: 7762027285753604763}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color02
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -3047,7 +3067,7 @@ GameObject:
   - component: {fileID: 2330961199359398428}
   - component: {fileID: 874578235401665198}
   - component: {fileID: 7914984717298061222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_big_color01
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -3088,7 +3108,7 @@ GameObject:
   - component: {fileID: 4845642687852857380}
   - component: {fileID: 6939079504218820044}
   - component: {fileID: 8156219106792919873}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building Sky_small_color01
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -3206,7 +3226,7 @@ GameObject:
   - component: {fileID: 8371063384306729355}
   - component: {fileID: 7320163686280425746}
   - component: {fileID: 8812911756920680084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Clothing
   m_TagString: Building
   m_Icon: {fileID: 0}

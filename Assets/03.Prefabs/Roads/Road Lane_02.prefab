@@ -121,7 +121,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 1024
   distance: 0.5
+  boxSize: {x: 40, y: 1, z: 40}
 --- !u!64 &2587342349308824751
 MeshCollider:
   m_ObjectHideFlags: 0
