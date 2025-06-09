@@ -198,7 +198,8 @@ GameObject:
   - component: {fileID: 7686841192911788419}
   - component: {fileID: 1351469266662645970}
   - component: {fileID: 4597319354516940579}
-  m_Layer: 0
+  - component: {fileID: -3429275639568032577}
+  m_Layer: 10
   m_Name: Building_Coffee Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,6 +275,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3429275639568032577
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263134431399860110}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a120bc9095fe23d458dc299a94dc00a8, type: 3}
 --- !u!1 &8992283116923924705
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,3 +367,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodSO: {fileID: 11400000, guid: deefd8bc95a96c7449d6a49cbaf7612b, type: 2}
   foodEvents: {fileID: 11400000, guid: 1ca9f9094254436439dde0f43e2c946e, type: 2}
+  deilveryCount: 0

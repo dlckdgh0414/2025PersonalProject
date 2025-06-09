@@ -1343,7 +1343,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!23 &330267918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1600,7 +1604,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!23 &379075934
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2269,7 +2277,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &508387716
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2857,7 +2869,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &579914398
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4180,7 +4196,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &945613361
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4621,7 +4641,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!23 &1051223291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6139,7 +6163,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1456201189
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6694,7 +6722,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1525631651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7104,7 +7136,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1574297409
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7352,7 +7388,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!23 &1599750074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8329,7 +8369,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1844791672
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8592,7 +8636,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!64 &1890785090
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -1689,116 +1689,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
   m_PrefabInstance: {fileID: 1620156801}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1669737967
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_Name
-      value: Rain_Medium
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: CollisionModule.quality
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: CollisionModule.collidesWithDynamic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: CollisionModule.m_Planes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3808553097126219826}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startRotationX.scalar
-      value: 3.1415927
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startRotationY.scalar
-      value: 3.1415927
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 100004, guid: c7d295a127617b34d86a1418089324ed, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7d295a127617b34d86a1418089324ed, type: 3}
 --- !u!1 &1703941114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6263134431399860110, guid: 651b7bb2d681d16418860898887df085, type: 3}
@@ -1966,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 403.2406, y: 40.423904, z: 403.01}
+  size: {x: 313.9455, y: 40.423904, z: 303.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -2006,7 +1896,7 @@ Transform:
   m_GameObject: {fileID: 1861211987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.88469, y: 18.491552, z: 79}
+  m_LocalPosition: {x: 40.237137, y: 18.491552, z: 29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4568,7 +4458,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!114 &7409927777943177710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4772,7 +4666,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!114 &7921036067507112187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5146,4 +5044,3 @@ SceneRoots:
   - {fileID: 1926428714}
   - {fileID: 1861211989}
   - {fileID: 584035223}
-  - {fileID: 1669737967}

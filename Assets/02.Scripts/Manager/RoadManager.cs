@@ -46,6 +46,15 @@ public class RoadManager : MonoBehaviour
         _roadPoints = new HashSet<Vector3Int>();
         _meshFilter = GetComponent<MeshFilter>();
         _meshFilter.mesh = new Mesh();
+        foreach (Transform child in roadTrm)
+        {
+            RoadPrefab road = child.GetComponent<RoadPrefab>();
+            if (road != null)
+            {
+                Vector3Int cell = mapGrid.WorldToCell(road.transform.position);
+                _roadPoints.Add(cell);
+            }
+        }
         bulidInput.OnBuildPressed += HandleClick;
         bulidInput.OnBuildModeChange += HandleBuildModeChange;
         bulidInput.OnRotObjectEvent += HandleRoatObject;

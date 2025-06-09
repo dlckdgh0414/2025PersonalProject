@@ -98,7 +98,8 @@ GameObject:
   - component: {fileID: 5158005772269506871}
   - component: {fileID: 2293924790693357638}
   - component: {fileID: 7106127470121544773}
-  m_Layer: 0
+  - component: {fileID: 3163134671015612083}
+  m_Layer: 10
   m_Name: Building_Bakery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,6 +175,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3163134671015612083
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403492876754550379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: ea9803764c3c1e74b83f6dda1cfa0885, type: 3}
 --- !u!1 &5369631442041752681
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,3 +367,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodSO: {fileID: 11400000, guid: 732145c8c813dc64e8cabe7ff7fd50a0, type: 2}
   foodEvents: {fileID: 11400000, guid: 1ca9f9094254436439dde0f43e2c946e, type: 2}
+  deilveryCount: 0
