@@ -31666,9 +31666,11 @@ MonoBehaviour:
   roadTrm: {fileID: 7160455411593944446}
   buildObjectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
   buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
+  audioChange: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
   selectUI: {fileID: 467439655}
   bulidUI: {fileID: 467439656}
   tooltipUI: {fileID: 487385011}
+  roadMakeSFX: {fileID: 8300000, guid: ad9b9aa5f69ada9428da3b791990baed, type: 3}
   OnConstructionModeChage:
     m_PersistentCalls:
       m_Calls: []

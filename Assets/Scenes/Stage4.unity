@@ -2499,7 +2499,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!65 &298102391051285331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3803,7 +3807,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!114 &5526717769480324249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4392,9 +4400,11 @@ MonoBehaviour:
   roadTrm: {fileID: 7160455411040518997}
   buildObjectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
   buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
+  audioChange: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
   selectUI: {fileID: 2115367467}
   bulidUI: {fileID: 2115367468}
   tooltipUI: {fileID: 995239606}
+  roadMakeSFX: {fileID: 8300000, guid: ad9b9aa5f69ada9428da3b791990baed, type: 3}
   OnConstructionModeChage:
     m_PersistentCalls:
       m_Calls: []
@@ -4520,7 +4530,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBuilding:
+    serializedVersion: 2
+    m_Bits: 0
   distance: 0.5
+  boxSize: {x: 1, y: 1, z: 1}
 --- !u!114 &7409927777981133304
 MonoBehaviour:
   m_ObjectHideFlags: 0

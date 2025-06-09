@@ -12,9 +12,11 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private Transform roadTrm;
     [SerializeField] private GameEventChannelSO buildObjectUI;
     [SerializeField] private GameEventChannelSO buildObject;
+    [SerializeField] private GameEventChannelSO audioChange;
     [SerializeField] private GameObject selectUI;
     [SerializeField] private GameObject bulidUI;
     [SerializeField] private GameObject tooltipUI;
+    [SerializeField] private AudioClip roadMakeSFX;
     private RoadPrefab _roadBlackPrefab;
     private RoadPrefab _roadPrivePrefab;
     private float RotBuildObject =0;
@@ -78,7 +80,7 @@ public class RoadManager : MonoBehaviour
 
     private void HandleDelRoad()
     {
-        if (_roadHistory.Count > 0)
+        if (_roadHistory.Count > 0 && ConstructionMode)
         {
             RoadPrefab roadToDelete = _roadHistory.Pop();
             Vector3Int cell = mapGrid.WorldToCell(roadToDelete.transform.position);
@@ -145,6 +147,7 @@ public class RoadManager : MonoBehaviour
                 Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
                 center.y = 0.8f;
                 _currentroad = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
+                audioChange.RaiseEvent(AudioEvents.AudioChangeEvent.Initializer(AudioType.SFX, roadMakeSFX,false));
                 _currentroad.transform.SetParent(roadTrm);
                 _currentroad.IsBuilding = true;
                 _roadHistory.Push(_currentroad);

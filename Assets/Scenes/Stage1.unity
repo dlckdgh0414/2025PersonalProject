@@ -1452,25 +1452,11 @@ MonoBehaviour:
   roadTrm: {fileID: 1866423523778961424}
   buildObjectUI: {fileID: 11400000, guid: 541e82583b68b584f81da6a09268101c, type: 2}
   buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
+  audioChange: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
   selectUI: {fileID: 721165109}
   bulidUI: {fileID: 2017638016}
   tooltipUI: {fileID: 1612175240}
-  buildings:
-  - {fileID: 1478356249873280357}
-  - {fileID: 3331859275123870858}
-  - {fileID: 2759206661470817175}
-  - {fileID: 6501317501519643831}
-  - {fileID: 8774303583501959256}
-  - {fileID: 7762027285753604762}
-  - {fileID: 1660519216}
-  - {fileID: 4556098741200598608}
-  - {fileID: 4757295206284786725}
-  - {fileID: 7552375072333662818}
-  - {fileID: 7267680169234420254}
-  - {fileID: 3613908691258786907}
-  - {fileID: 1222581325}
-  - {fileID: 1819415522}
-  - {fileID: 701996252}
+  roadMakeSFX: {fileID: 8300000, guid: ad9b9aa5f69ada9428da3b791990baed, type: 3}
   OnConstructionModeChage:
     m_PersistentCalls:
       m_Calls: []
