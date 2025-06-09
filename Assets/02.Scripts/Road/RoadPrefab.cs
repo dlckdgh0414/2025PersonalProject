@@ -37,14 +37,15 @@ public class RoadPrefab : MonoBehaviour
 
     public bool RoadCheck()
     {
+        if (IsBuildingNearby())
+        {
+            return false;
+        }
+
         foreach (var check in roadChecks)
         {
             if (Physics.Raycast(check.position, check.forward, out RaycastHit hit, distance, whatIsRoad))
             {
-                if (IsBuildingNearby())
-                {
-                    return false;
-                }
                 if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitGround, 0.9f, whatIsGround))
                 {
                     return true;
