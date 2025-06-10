@@ -5,11 +5,18 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private StageSettingSO stageSetting;
     [SerializeField] private GameEventChannelSO stageClearEvent;
+    [SerializeField] private GameEventChannelSO audioChange;
     [SerializeField] private ClearUI stageClaerUI;
+    [SerializeField] private AudioClip stageBgm;
 
     private void Awake()
     {
         stageClearEvent.AddListener<StageClaerEvent>(HandleClearStageEvent);
+    }
+
+    private void OnEnable()
+    {
+        audioChange.RaiseEvent(AudioEvents.AudioChangeEvent.Initializer(AudioType.BGM, stageBgm));
     }
 
     private void OnDestroy()

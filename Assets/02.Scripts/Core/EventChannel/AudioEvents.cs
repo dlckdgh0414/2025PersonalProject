@@ -17,7 +17,7 @@ public class AudioChangeEvent : GameEvent
     public AudioClip clip;
     public bool IsLooping;
 
-    public AudioChangeEvent Initializer(AudioType audioType,AudioClip clip,bool isLooping)
+    public AudioChangeEvent Initializer(AudioType audioType,AudioClip clip,bool isLooping = false)
     {
         this.audioType = audioType;
         this.clip = clip;

@@ -973,7 +973,7 @@ Transform:
   m_GameObject: {fileID: 826606848}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0.8, z: 45}
+  m_LocalPosition: {x: 5, y: 1, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1260,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 1193234137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 0.8, z: -35}
+  m_LocalPosition: {x: 5, y: 1, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2439,6 +2439,10 @@ PrefabInstance:
       propertyPath: wayPoints
       value: 
       objectReference: {fileID: 1044100347}
+    - target: {fileID: 5903954673666440486, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
+      propertyPath: stageBgm
+      value: 
+      objectReference: {fileID: 8300000, guid: 529654c1901f4954595367793c60cc0a, type: 3}
     - target: {fileID: 5903954673666440486, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: stageSetting
       value: 
@@ -3885,7 +3889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4631,7 +4635,7 @@ Transform:
   m_GameObject: {fileID: 7898630507738343831}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85, y: 0.8, z: 45}
+  m_LocalPosition: {x: 85, y: 1, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

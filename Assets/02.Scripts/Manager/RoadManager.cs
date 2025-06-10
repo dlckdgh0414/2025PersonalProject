@@ -106,7 +106,7 @@ public class RoadManager : MonoBehaviour
             {
                 _roadPrivePrefab = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0, RotBuildObject, 0));
             }
-            center.y = 0.8f;
+            center.y = 0.1f;
             _roadPrivePrefab.transform.position = center;
             _roadPrivePrefab.transform.rotation = Quaternion.Euler(0, RotBuildObject, 0); 
         }
@@ -145,7 +145,7 @@ public class RoadManager : MonoBehaviour
             if (_roadPoints.Add(GetCellSize()))
             {
                 Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
-                center.y = 0.8f;
+                center.y = 0.1f;
                 _currentroad = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0,RotBuildObject,0));
                 audioChange.RaiseEvent(AudioEvents.AudioChangeEvent.Initializer(AudioType.SFX, roadMakeSFX,false));
                 _currentroad.transform.SetParent(roadTrm);
