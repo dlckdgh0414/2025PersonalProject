@@ -7,7 +7,7 @@ public class SelectTurtuoil : MonoBehaviour
     [SerializeField] private TutorialUI tutorialUI;
     private async void Start()
     {
-        await Awaitable.WaitForSecondsAsync(1f);
+        await Awaitable.WaitForSecondsAsync(3f);
         if (_count <= 0)
         {
             tutorialUI.gameObject.SetActive(true);

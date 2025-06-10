@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GameEventChannelSO playerEvent;
     [SerializeField] private Collider playerCnt;
+    public Transform deilveryTrm;
     [SerializeField] private bool isLoop;
     private bool _isStart = false;
     private int _currentPointIdx = 0;

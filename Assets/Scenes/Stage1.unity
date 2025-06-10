@@ -177,8 +177,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 95df4e0c18ea8234d975592071b34642, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3050,7 +3050,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 583541469136416046, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2664547648281668734, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: m_Name
@@ -3064,6 +3064,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 5395548206323510894, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
+      propertyPath: foodObj
+      value: 
+      objectReference: {fileID: 4850541254266803216, guid: 1d08eb9304ef2d247b4c953f91c9ca75, type: 3}
     - target: {fileID: 5395548206323510894, guid: f9295456b33b2a243920cf1e1c9c9732, type: 3}
       propertyPath: deilveryCount
       value: 2
@@ -4547,7 +4551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 597277935375544086, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 597277935375544086, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4565,6 +4569,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 4115058402325599162, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
+      propertyPath: foodObj
+      value: 
+      objectReference: {fileID: 7116164977511586910, guid: 54447e78ac5be41428f9078cf6910bf7, type: 3}
     - target: {fileID: 4115058402325599162, guid: 4be9246ae45324c4ebc70b1c129db56a, type: 3}
       propertyPath: deilveryCount
       value: 1
@@ -8132,7 +8140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8639,7 +8647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9231,7 +9239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3174748136954764394, guid: 7c47532ff371127428ef0e5506f40b39, type: 3}
       propertyPath: m_LocalPosition.z
