@@ -9,6 +9,8 @@ public class BuildCanvas : MonoBehaviour
     [SerializeField] private StageSettingSO stageSetting;
     [SerializeField] private GameEventChannelSO buildObject;
     [SerializeField] private GameEventChannelSO playerEvent;
+    [SerializeField] private TutorialUI tutorialUI;
+    private int _count;
     private int _currentCost;
 
 
@@ -18,6 +20,15 @@ public class BuildCanvas : MonoBehaviour
         _currentCost = stageSetting.stageMaxCost;
         buildObject.AddListener<BuildObject>(HandleBuildCostDown);
         buildObject.AddListener<DelObject>(HandleDelObject);
+    }
+
+    private void OnEnable()
+    {
+        if(_count <= 0 && tutorialUI != null)
+        {
+            tutorialUI.gameObject.SetActive(true);
+            _count++;
+        }
     }
 
     private void OnDestroy()

@@ -1711,6 +1711,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379075930}
   m_Mesh: {fileID: 4300000, guid: b38a4b1b87a3b81429916ae40f4a3f6f, type: 3}
+--- !u!1 &383020157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383020159}
+  - component: {fileID: 383020158}
+  m_Layer: 0
+  m_Name: Stage1Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &383020158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383020157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab06091eafe381418544578b52c2384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageSetting: {fileID: 11400000, guid: d47b5dfe394844d459a375f5b71c7aa7, type: 2}
+  stageClearEvent: {fileID: 11400000, guid: fc7c6fb3d7ceaa440bfbd00dcb0b80ed, type: 2}
+  audioChange: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
+  stageClaerUI: {fileID: 0}
+  stageBgm: {fileID: 8300000, guid: 3c8f2a56440ebfd4a88d896834e6b00c, type: 3}
+--- !u!4 &383020159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383020157}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1668.4055, y: 813.64514, z: 139.82608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384142641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,8 +3349,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3c8f2a56440ebfd4a88d896834e6b00c, type: 3}
-  m_Resource: {fileID: 8300000, guid: 3c8f2a56440ebfd4a88d896834e6b00c, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22104,3 +22153,4 @@ SceneRoots:
   - {fileID: 1348499528}
   - {fileID: 494359720325277370}
   - {fileID: 277224991}
+  - {fileID: 383020159}

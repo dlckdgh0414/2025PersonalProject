@@ -14,7 +14,7 @@ public class StageManager : MonoBehaviour
         stageClearEvent.AddListener<StageClaerEvent>(HandleClearStageEvent);
     }
 
-    private void OnEnable()
+    private void Start()
     {
         audioChange.RaiseEvent(AudioEvents.AudioChangeEvent.Initializer(AudioType.BGM, stageBgm));
     }
@@ -26,7 +26,10 @@ public class StageManager : MonoBehaviour
 
     private void HandleClearStageEvent(StageClaerEvent evt)
     {
-        stageClaerUI.gameObject.SetActive(true);
-        stageClaerUI.SetDeliveryTime(evt.timeText,evt.minTime,evt.secTime);
+        if(stageClaerUI != null)
+        {
+            stageClaerUI.gameObject.SetActive(true);
+            stageClaerUI.SetDeliveryTime(evt.timeText,evt.minTime,evt.secTime);
+        }
     }
 }

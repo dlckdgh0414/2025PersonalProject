@@ -33,6 +33,8 @@ public class RoadManager : MonoBehaviour
     private MeshFilter _meshFilter;
     private bool _isBuilding = true;
 
+    public bool IsChangeing = true;
+
     public bool ConstructionMode
     {
         get => _isConstructionMode;
@@ -126,14 +128,18 @@ public class RoadManager : MonoBehaviour
 
     private void HandleBuildModeChange(bool changeModeValue)
     {
-        if(_roadPrivePrefab != null)
+        if (IsChangeing)
         {
-            Destroy(_roadPrivePrefab.gameObject);
+            if(_roadPrivePrefab != null)
+            {
+                Destroy(_roadPrivePrefab.gameObject);
+            }
+            ConstructionMode = changeModeValue;
+            selectUI.SetActive(!changeModeValue);
+            tooltipUI.SetActive(!changeModeValue);
+            bulidUI.SetActive(changeModeValue);
         }
-        ConstructionMode = changeModeValue;
-        selectUI.SetActive(!changeModeValue);
-        tooltipUI.SetActive(!changeModeValue);
-        bulidUI.SetActive(changeModeValue);
+
     }
 
     private void HandleClick()

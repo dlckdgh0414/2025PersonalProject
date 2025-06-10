@@ -11,27 +11,29 @@ public class TutorialUI : MonoBehaviour
     [SerializeField] private TextList picoStrings;
     [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private float delayBetweenTexts = 1f;
-    [SerializeField] private GameObject[] tutorialUI;
-    [SerializeField] private GameEventChannelSO tutorialEvent;
-    private int _count = 0;
+    [SerializeField] private GameObject[] nextUI;
+    [SerializeField] private RoadManager manager;
+    public int count = 0;
 
     private void OnEnable()
     {
-        if(_count > 0)
-        {
-            tutorialUI[_count - 1].SetActive(false);
-        }
+        manager.IsChangeing = false;
         ShowTextSequence();
     }
 
     private void OnDisable()
     {
-        _count++;
+        count++;
+        if(count >= nextUI.Length)
+        {
+            count = nextUI.Length;
+        }
+        manager.IsChangeing = true;
     }
 
     private async void ShowTextSequence()
     {
-        foreach (string fullText in picoStrings.textList[_count].picotexts)
+        foreach (string fullText in picoStrings.textList[count].picotexts)
         {
             picoText.text = "";
             foreach (char c in fullText)
@@ -43,7 +45,7 @@ public class TutorialUI : MonoBehaviour
             await Awaitable.WaitForSecondsAsync(delayBetweenTexts);
         }
 
-        tutorialUI[_count].SetActive(true);
-        tutorialEvent.RaiseEvent(TutorialEvents.TutorialUIEvent.Initializer(false));
+        nextUI[count].SetActive(true);
+        gameObject.SetActive(false);
     }
 }
