@@ -5,13 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private WayPoints wayPoints;
-    [SerializeField] private PlayerMovement playerMovement;
+    public PlayerMovement playerMovement;
     [SerializeField] private GameEventChannelSO playerEvent;
     [SerializeField] private Collider playerCnt;
-    public Transform deilveryTrm;
+    public Transform deliveryTrm;
     [SerializeField] private bool isLoop;
-    private bool _isStart = false;
+    [HideInInspector] public bool isMove = false;
     private int _currentPointIdx = 0;
+   [HideInInspector] public GameObject foodObj = null;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
     private async void HandleStartPlayer(StartPlayerEvent evt)
     {
         await Awaitable.WaitForSecondsAsync(2f);
-        _isStart = evt.IsStart;
+        isMove = evt.IsStart;
         playerCnt.isTrigger = false;
     }
 
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if (_isStart)
+        if (isMove)
         {
             playerMovement.SetDestination(wayPoints[_currentPointIdx].position);
             if (playerMovement.IsArrived && !isLoop)

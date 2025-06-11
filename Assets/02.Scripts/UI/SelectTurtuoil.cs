@@ -5,14 +5,15 @@ public class SelectTurtuoil : MonoBehaviour
 {
     private int _count = 0;
     [SerializeField] private TutorialUI tutorialUI;
+    [SerializeField] private GameObject system;
     private async void Start()
     {
-        await Awaitable.WaitForSecondsAsync(3f);
+        await Awaitable.WaitForSecondsAsync(2f);
         if (_count <= 0)
         {
             tutorialUI.gameObject.SetActive(true);
             _count++;
-            gameObject.SetActive(false);
+            system.gameObject.SetActive(false);
         }
     }
 }

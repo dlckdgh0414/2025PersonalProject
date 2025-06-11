@@ -7,10 +7,15 @@ public class TutorialButton : MonoBehaviour
 {
     [SerializeField] private TutorialUI tutorialUI;
     [SerializeField] private GameObject channelMod;
+    private int _count;
 
     public void ShowtorialUI()
     {
-        tutorialUI.gameObject.SetActive(true);
-        tutorialUI.count = 3;
+        if (_count <= 0)
+        {
+            tutorialUI.gameObject.SetActive(true);
+            tutorialUI.count = 3;
+            _count++;
+        }
     }
 }

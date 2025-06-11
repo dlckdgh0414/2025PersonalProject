@@ -17836,7 +17836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ab225d0c1ab04e549ab6401a65bcd6cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 99.40001
+      value: 161.9
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ab225d0c1ab04e549ab6401a65bcd6cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29941,6 +29941,7 @@ MonoBehaviour:
   foodSO: {fileID: 11400000, guid: ef83ffc22217ea44299a5f4631c0b4f5, type: 2}
   foodEvents: {fileID: 11400000, guid: 1ca9f9094254436439dde0f43e2c946e, type: 2}
   deilveryCount: 2
+  foodObj: {fileID: 0}
 --- !u!23 &4072774661406121513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30659,6 +30660,7 @@ MonoBehaviour:
   foodSO: {fileID: 11400000, guid: af367f849a855ed45926de467f32da75, type: 2}
   foodEvents: {fileID: 11400000, guid: 1ca9f9094254436439dde0f43e2c946e, type: 2}
   deilveryCount: 2
+  foodObj: {fileID: 0}
 --- !u!1 &5401075999025355527
 GameObject:
   m_ObjectHideFlags: 0
