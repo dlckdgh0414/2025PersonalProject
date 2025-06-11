@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool isLoop;
     [HideInInspector] public bool isMove = false;
     private int _currentPointIdx = 0;
-   [HideInInspector] public GameObject foodObj = null;
+    [HideInInspector] public GameObject foodObj = null;
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
         await Awaitable.WaitForSecondsAsync(2f);
         isMove = evt.IsStart;
         playerCnt.isTrigger = false;
+        animator.SetBool("MOVE", true);
     }
 
     public void Update()

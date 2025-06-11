@@ -695,9 +695,17 @@ PrefabInstance:
       propertyPath: m_ColorTemperature
       value: 2394
       objectReference: {fileID: 0}
+    - target: {fileID: 6109048748394912654, guid: 42c7f6aacad7bfd4e921f9a531c14807, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8948462043872138723, guid: 42c7f6aacad7bfd4e921f9a531c14807, type: 3}
       propertyPath: m_Name
       value: Directional Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948462043872138723, guid: 42c7f6aacad7bfd4e921f9a531c14807, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -785,6 +793,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1167955600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6126918403288592003, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 5198713548224567807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1222581325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
@@ -5598,8 +5611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deliveryTimeText: {fileID: 7513901125634197391}
   nextSceneIdx: 2
-  threestarsMin: 0
-  threestarsSec: 59
+  threestarsMin: 1
+  threestarsSec: 1
   twostarsMin: 1
   twostarsSec: 30
   stars:
@@ -7053,13 +7066,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2420989063366673354, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420989063366673354, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420989063366673354, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 2549807041957133836, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2549807041957133836, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2549807041957133836, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7109,6 +7134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: maxLeanAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: modelTransform
+      value: 
+      objectReference: {fileID: 1167955600}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
