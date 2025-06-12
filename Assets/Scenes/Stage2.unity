@@ -2235,6 +2235,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: dirveCam
+      value: 
+      objectReference: {fileID: 1896079404}
+    - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: modelTransform
       value: 
       objectReference: {fileID: 1896079403}
@@ -2246,6 +2250,11 @@ PrefabInstance:
 --- !u!4 &1896079403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6126918403288592003, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 1896079402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1896079404 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
   m_PrefabInstance: {fileID: 1896079402}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904653555

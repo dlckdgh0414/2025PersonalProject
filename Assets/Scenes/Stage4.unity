@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 303.01, y: 18.827007, z: 303.01}
+  size: {x: 353.01, y: 18.827007, z: 353.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -259,7 +259,7 @@ Transform:
   m_GameObject: {fileID: 36410817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47, y: 7.871563, z: -25}
+  m_LocalPosition: {x: -22, y: 7.871563, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1411,11 +1411,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: dirveCam
+      value: 
+      objectReference: {fileID: 1222636491}
+    - target: {fileID: 8066233627136490014, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: modelTransform
+      value: 
+      objectReference: {fileID: 1222636492}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+--- !u!4 &1222636491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 1222636490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1222636492 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6126918403288592003, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 1222636490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1250496755
 GameObject:
   m_ObjectHideFlags: 0

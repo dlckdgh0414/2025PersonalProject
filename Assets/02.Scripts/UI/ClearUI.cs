@@ -14,6 +14,7 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private float twostarsMin, twostarsSec;
     [SerializeField] private Image[] stars;
     [SerializeField] private GameEventChannelSO sceneChangeEvent;
+    [SerializeField] private DataSO dataSO;
 
     private void Awake()
     {
@@ -27,6 +28,11 @@ public class ClearUI : MonoBehaviour
     private void OnEnable()
     {
         Time.timeScale = 1;
+    }
+
+    private void OnDestroy()
+    {
+        DataManager.Intance.SaveData();
     }
 
 
@@ -62,11 +68,13 @@ public class ClearUI : MonoBehaviour
 
     public void NextScene()
     {
+        dataSO.ClearStageNum = nextSceneIdx;
         sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(nextSceneIdx));
     }
 
     public void MainMenu()
     {
+        dataSO.ClearStageNum = nextSceneIdx;
         sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(0));
     }
 }
