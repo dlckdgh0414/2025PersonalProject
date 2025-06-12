@@ -5611,8 +5611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deliveryTimeText: {fileID: 7513901125634197391}
   nextSceneIdx: 2
-  threestarsMin: 1
-  threestarsSec: 1
+  threestarsMin: 0
+  threestarsSec: 59
   twostarsMin: 1
   twostarsSec: 30
   stars:
@@ -7122,6 +7122,34 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 320085652028926836}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000014982982
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -8.605167e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983486535001238146, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000038364508
+      objectReference: {fileID: 0}
     - target: {fileID: 6741762943759592320, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.9
