@@ -23,6 +23,7 @@ public class RoadManager : MonoBehaviour
     private int _buildCost;
     private RoadPrefab _currentroad = null;
     private Stack<RoadPrefab> _roadHistory = new Stack<RoadPrefab>();
+    private Stack<int> _buildCostHistory = new Stack<int>();
 
     public UnityEvent<bool> OnConstructionModeChage;
     public UnityEvent OnUpdateRoad;
@@ -88,7 +89,7 @@ public class RoadManager : MonoBehaviour
             Vector3Int cell = mapGrid.WorldToCell(roadToDelete.transform.position);
             _roadPoints.Remove(cell);
 
-            buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(_buildCost));
+            buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(_buildCostHistory.Pop()));
             Destroy(roadToDelete.gameObject);
         }
     }
@@ -102,7 +103,6 @@ public class RoadManager : MonoBehaviour
     {
         if (ConstructionMode && _roadBlackPrefab != null && _isBuilding)
         {
-            buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost));
             Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
             if (_roadPrivePrefab == null)
             {
@@ -157,7 +157,8 @@ public class RoadManager : MonoBehaviour
                 _currentroad.transform.SetParent(roadTrm);
                 _currentroad.IsBuilding = true;
                 _roadHistory.Push(_currentroad);
-                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost,true));
+                _buildCostHistory.Push(_buildCost);
+                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCostHistory.Peek(),true));
                 Destroy(_roadPrivePrefab.gameObject);
                 OnUpdateRoad?.Invoke();
             }

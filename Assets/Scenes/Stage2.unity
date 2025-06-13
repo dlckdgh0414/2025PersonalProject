@@ -1528,7 +1528,7 @@ GameObject:
   - component: {fileID: 1203941535}
   - component: {fileID: 1205072479}
   - component: {fileID: 1207365824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Residential_color03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2073,7 +2073,7 @@ GameObject:
   - component: {fileID: 1736851228}
   - component: {fileID: 1737981404}
   - component: {fileID: 1739973405}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_01_color03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2132,7 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 313.9455, y: 40.423904, z: 303.01}
+  size: {x: 353.2406, y: 40.423904, z: 353.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -2172,7 +2172,7 @@ Transform:
   m_GameObject: {fileID: 1861211987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.237137, y: 18.491552, z: 29}
+  m_LocalPosition: {x: 59.88469, y: 18.491552, z: 54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2480,7 +2480,7 @@ GameObject:
   - component: {fileID: 2066592088}
   - component: {fileID: 2067592088}
   - component: {fileID: 2067592089}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_04_color01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

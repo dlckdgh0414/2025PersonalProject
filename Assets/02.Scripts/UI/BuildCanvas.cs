@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuildCanvas : MonoBehaviour
@@ -13,27 +14,33 @@ public class BuildCanvas : MonoBehaviour
     private int _count;
     private int _currentCost;
 
-
     private void Awake()
     {
         costText.text = "Cost : " + stageSetting.stageMaxCost;
         _currentCost = stageSetting.stageMaxCost;
-        buildObject.AddListener<BuildObject>(HandleBuildCostDown);
-        buildObject.AddListener<DelObject>(HandleDelObject);
+       
     }
 
     private void OnEnable()
     {
-        if(_count <= 0 && tutorialUI != null)
+
+        buildObject.AddListener<BuildObject>(HandleBuildCostDown);
+        buildObject.AddListener<DelObject>(HandleDelObject);
+        if (_count <= 0 && tutorialUI != null)
         {
             tutorialUI.gameObject.SetActive(true);
             _count++;
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         buildObject.RemoveListener<BuildObject>(HandleBuildCostDown);
+        
+    }
+
+    private void OnDestroy()
+    {
         buildObject.RemoveListener<DelObject>(HandleDelObject);
     }
 
@@ -46,6 +53,7 @@ public class BuildCanvas : MonoBehaviour
 
     private void HandleBuildCostDown(BuildObject evt)
     {
+
         if(_currentCost - evt.buildCost < 0)
         {
             buildObject.RaiseEvent(BuildEvents.BuildObjectCheck.Initializer(false));

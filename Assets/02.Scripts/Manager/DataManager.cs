@@ -20,6 +20,7 @@ public class DataManager : MonoBehaviour
         stageData = new StageData();
 
         LoadData();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SaveData()
@@ -56,6 +57,7 @@ public class DataManager : MonoBehaviour
             dataSO.masterVolume = stageData.MasterVolume;
             dataSO.bgmVolume = stageData.BgmVolume;
             dataSO.sfxVolume = stageData.SfVolume;
+            dataSO.isTutorialClear = stageData.IsTutorialClear;
         }
         else
         {
@@ -63,6 +65,7 @@ public class DataManager : MonoBehaviour
             stageData.MasterVolume = dataSO.masterVolume;
             stageData.BgmVolume = dataSO.bgmVolume;
             stageData.SfVolume = dataSO.sfxVolume;
+            stageData.IsTutorialClear = dataSO.isTutorialClear;
         }
     }
 
@@ -74,9 +77,10 @@ public class DataManager : MonoBehaviour
 
 public class StageData
 {
-    public int StageLavelNum = 0;
+    public int StageLavelNum = 1;
     public float MasterVolume = 0;
     public float BgmVolume = 0;
     public float SfVolume = 0;
+    public bool IsTutorialClear = false;
 }
 

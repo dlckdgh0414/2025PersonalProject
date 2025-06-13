@@ -144,6 +144,8 @@ MonoBehaviour:
     m_Bits: 1024
   distance: 0.5
   boxSize: {x: 10, y: 1, z: 10}
+  cost: 3
+  buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
 --- !u!1 &1129469182150144220
 GameObject:
   m_ObjectHideFlags: 0

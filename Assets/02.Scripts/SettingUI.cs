@@ -15,24 +15,21 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private Image setting;
     public bool IsEsc;
 
-    private void Awake()
-    {
-        HideSetting();
-    }
-
     private void OnEnable()
     {
         SetMasterVolume();
         SetBgmVolume();
         SetSfxCVolume();
+    }
+
+    private void Start()
+    {
         LoadSettingUI();
-        
     }
 
     private void OnDisable()
     {
-        SaveSettingUI();
-        
+        SaveSettingUI();        
     }
 
     public void HideSetting()
@@ -58,7 +55,10 @@ public class SettingUI : MonoBehaviour
 
     private void LoadSettingUI()
     {
-        DataManager.Intance.LoadData();
+        if(DataManager.Intance != null)
+        {
+            DataManager.Intance.LoadData();
+        }
 
         master.value = DbToLinear(data.masterVolume);
         bgm.value = DbToLinear(data.bgmVolume);

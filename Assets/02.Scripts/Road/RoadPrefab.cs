@@ -10,6 +10,8 @@ public class RoadPrefab : MonoBehaviour
     [SerializeField] private LayerMask whatIsRoad,whatIsGround,whatIsBuilding;
     [SerializeField] private float distance = 1f;
     [SerializeField] private Vector3 boxSize = new Vector3(1f, 1f, 1f);
+    [SerializeField] private int cost;
+    [SerializeField] private GameEventChannelSO buildObject;
 
     private void Update()
     {
@@ -21,6 +23,12 @@ public class RoadPrefab : MonoBehaviour
         {
             isRoad = false;
         }
+    }
+
+    public void DestoryRoad()
+    {
+        buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(cost));
+        Destroy(gameObject);
     }
 
 

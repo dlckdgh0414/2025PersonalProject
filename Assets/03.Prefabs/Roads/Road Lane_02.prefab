@@ -126,6 +126,8 @@ MonoBehaviour:
     m_Bits: 1024
   distance: 0.5
   boxSize: {x: 10, y: 1, z: 10}
+  cost: 4
+  buildObject: {fileID: 11400000, guid: 1e66c38bedcea4f4eab4583833e9dd29, type: 2}
 --- !u!64 &2587342349308824751
 MeshCollider:
   m_ObjectHideFlags: 0

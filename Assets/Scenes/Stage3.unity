@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 214500894}
   - component: {fileID: 216794367}
   - component: {fileID: 216794368}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_01_color02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,6 +1058,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1043666678551147835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799630050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2764144906457827392, guid: e93da80a28826f849bb509b0b62c7946, type: 3}
+  m_PrefabInstance: {fileID: 1559512125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9225d114ca3d4e5429f880bf561cbe33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &982252079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1436,7 @@ GameObject:
   - component: {fileID: 1384785001}
   - component: {fileID: 1387210378}
   - component: {fileID: 1387210379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Shoes Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +1954,7 @@ GameObject:
   - component: {fileID: 1880015209}
   - component: {fileID: 1881956266}
   - component: {fileID: 1881956267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_04_color03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2394,7 +2405,7 @@ PrefabInstance:
     - target: {fileID: 5488674347802557735, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: wayPoints
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 799630050}
     - target: {fileID: 5616410441249064342, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2599,7 +2610,7 @@ GameObject:
   - component: {fileID: 3448861375765459483}
   - component: {fileID: 1095770040238317343}
   - component: {fileID: 3448861375765459484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Super Market
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3126,7 +3137,7 @@ GameObject:
   - component: {fileID: 1043666678548247835}
   - component: {fileID: 1043666678549247963}
   - component: {fileID: 1043666678551177500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_03_color03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4042,7 +4053,7 @@ GameObject:
   - component: {fileID: 4778524392163896713}
   - component: {fileID: 4072774660484233802}
   - component: {fileID: 8237293003795075254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Pizza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +5040,7 @@ GameObject:
   - component: {fileID: 4444184856977591406}
   - component: {fileID: 4444184856976461486}
   - component: {fileID: 4444184856978885711}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_House_02_color01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29767,7 +29778,7 @@ GameObject:
   - component: {fileID: 8218910404574066148}
   - component: {fileID: 1100231047194751463}
   - component: {fileID: 8218910404574066149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Bakery
   m_TagString: Untagged
   m_Icon: {fileID: 0}

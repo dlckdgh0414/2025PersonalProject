@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeilevryStartUI : MonoBehaviour
@@ -73,6 +74,11 @@ public class DeilevryStartUI : MonoBehaviour
     {
         foodImage.sprite = evt.foodSO.foodSprite;
         foodText.text = evt.foodSO.foodName;
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void DoubleSpeedButton()

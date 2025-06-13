@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DataSO
   m_EditorClassIdentifier: 
   ClearStageNum: 1
-  masterVolume: 0
+  masterVolume: -80
   bgmVolume: 0
   sfxVolume: 0
+  isTutorialClear: 0

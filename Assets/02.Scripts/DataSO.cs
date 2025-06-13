@@ -7,4 +7,5 @@ public class DataSO : ScriptableObject
     public float masterVolume;
     public float bgmVolume;
     public float sfxVolume;
+    public bool isTutorialClear = false;
 }

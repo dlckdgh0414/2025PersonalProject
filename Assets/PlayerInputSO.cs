@@ -18,6 +18,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
 
     public Vector2 MovementKey { get; private set; }
     public bool IsBuildChannel { get; set; } = false;
+    public RoadPrefab clickRoadPrefab { get; set; } = null;
 
     private Vector3 _worldPosition;
     private Vector2 _screenPosition;
@@ -61,13 +62,15 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
         Ray cameraRay = mainCam.ScreenPointToRay(_screenPosition);
         if (Physics.Raycast(cameraRay, out RaycastHit hit, mainCam.farClipPlane, whatIsGround))
         {
-            if (hit.collider.CompareTag("Road"))
+            if (hit.collider.TryGetComponent(out RoadPrefab road))
             {
                 IsBuildChannel = true;
+                clickRoadPrefab = road;
             }
             else
             {
                 IsBuildChannel = false;
+                clickRoadPrefab = null;
             }
 
             if (hit.collider.TryGetComponent(out GimmickToolTip gimmick))
