@@ -6,12 +6,12 @@ public class RotationRoad : MonoBehaviour
 {
     [SerializeField] private NavMeshSurface navMeshSurface;
 
-    private async void OnCollisionExit(Collision collision)
+    private async void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            await Awaitable.WaitForSecondsAsync(1f);
-            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y -90, 0);
+            await Awaitable.WaitForSecondsAsync(0.5f);
+            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y - 90, 0);
             navMeshSurface.BuildNavMesh();
         }
     }

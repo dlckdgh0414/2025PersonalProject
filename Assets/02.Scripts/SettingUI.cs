@@ -99,8 +99,8 @@ public class SettingUI : MonoBehaviour
 
     public void MainMenuBnt()
     {
-        Time.timeScale = 1f;
         sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(0));
+        _isTimeScale = 1f;
         HideSetting();
     }
 

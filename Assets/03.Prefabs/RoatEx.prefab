@@ -4885,8 +4885,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipEvents: {fileID: 11400000, guid: 510ff76d36250594bbcc97e3ac59f6cd, type: 2}
-  tooltipText: "\uC774 \uB3C4\uB85C\uB97C \uC9C0\uB098\uAC00\uBA74 \uB3C4\uB85C\uAC00
-    \uBC18\uC2DC\uACC4\uBC29\uD5A5\uC73C\uB85C \uB3CC\uC544\uAC11\uB2C8\uB2E4."
+  tooltipText: "\uC774 \uB3C4\uB85C\uC5D0 \uB4E4\uC5B4\uC624 \uB3C4\uB85C\uAC00 \uBC18\uC2DC\uACC4\uBC29\uD5A5\uC73C\uB85C
+    \uB3CC\uC544\uAC11\uB2C8\uB2E4."
 --- !u!1 &4796733724113206643
 GameObject:
   m_ObjectHideFlags: 0

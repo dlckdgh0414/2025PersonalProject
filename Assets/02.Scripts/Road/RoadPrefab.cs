@@ -13,6 +13,7 @@ public class RoadPrefab : MonoBehaviour
     [SerializeField] private Vector3 boxSize = new Vector3(1f, 1f, 1f);
     [SerializeField] private int cost;
     [SerializeField] private GameEventChannelSO buildObject;
+    [SerializeField] private bool installed = false;
 
     private void Update()
     {
@@ -28,6 +29,10 @@ public class RoadPrefab : MonoBehaviour
 
     public void DestoryRoad(Grid grid,HashSet<Vector3Int> mapcell)
     {
+        if(installed)
+        {
+            return;
+        }
         Vector3Int cell = grid.WorldToCell(gameObject.transform.position);
         mapcell.Remove(cell);
         buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(cost));
