@@ -713,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 483661936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -9.729011, y: 43.499992, z: 13.599999}
+  m_LocalPosition: {x: 6.0999994, y: 43.499996, z: 13.599999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1957,19 +1957,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.z
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8704182521386799710, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Name
@@ -2587,6 +2587,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1794305944887121858, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2042515893818385053, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2664,6 +2668,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 138c6e93ef18af949bab7b7f12c1807f, type: 2}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
+      propertyPath: stageNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: twostarsMin
       value: 3
       objectReference: {fileID: 0}
@@ -2673,7 +2681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: nextSceneIdx
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: threestarsMin

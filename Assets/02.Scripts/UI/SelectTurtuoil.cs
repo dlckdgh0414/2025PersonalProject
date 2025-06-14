@@ -10,7 +10,7 @@ public class SelectTurtuoil : MonoBehaviour
     private async void Start()
     {
         await Awaitable.WaitForSecondsAsync(1.75f);
-        if (_count <= 0&& !dataSO.isTutorialClear)
+        if (_count <= 0&& !dataSO.IsTutorialClear)
         {
             tutorialUI.gameObject.SetActive(true);
             _count++;

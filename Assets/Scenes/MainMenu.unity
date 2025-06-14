@@ -3646,7 +3646,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4116,10 +4116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15064,6 +15064,9 @@ MonoBehaviour:
   player: {fileID: 2549807040804688652}
   channelMat: {fileID: 2100000, guid: 1645acefa0ea1ea48be1a4a5bbd2a300, type: 2}
   navMeshSurface: {fileID: 393516394}
+  lineHeight: 0.1
+  dashLength: 0.3
+  gapLength: 0.2
 --- !u!4 &2786399700934223936
 Transform:
   m_ObjectHideFlags: 0
@@ -21214,7 +21217,7 @@ MonoBehaviour:
   wayPoints: {fileID: 2764144907585004864}
   playerMovement: {fileID: 8066233626009212702}
   playerEvent: {fileID: 11400000, guid: 6dac5263c5baae84f811e7a20642e7d0, type: 2}
-  audioChangeEvent: {fileID: 0}
+  audioChangeEvent: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
   playerCnt: {fileID: 5879565438550955068}
   deliveryTrm: {fileID: 0}
   isLoop: 1
@@ -23707,10 +23710,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

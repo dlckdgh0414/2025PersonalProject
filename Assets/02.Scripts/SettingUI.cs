@@ -16,6 +16,8 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private GameEventChannelSO sceneChangeEvent;
     [SerializeField] private GameObject mainMenuBtn;
     public bool IsEsc;
+    private float _isTimeScale;
+    private bool _pausedBySetting = false;
 
     private void OnEnable()
     {
@@ -35,18 +37,30 @@ public class SettingUI : MonoBehaviour
         SaveSettingUI();        
     }
 
-    public void HideSetting()
-    {
-        setting.gameObject.SetActive(false);
-        Time.timeScale = 1f;
-    }
 
     public void ShowSetting()
     {
+        if (!_pausedBySetting)
+        {
+            _isTimeScale = Time.timeScale;
+            _pausedBySetting = true;
+        }
+
         setting.gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
-    
+
+    public void HideSetting()
+    {
+        setting.gameObject.SetActive(false);
+
+        if (_pausedBySetting)
+        {
+            Time.timeScale = _isTimeScale;
+            _pausedBySetting = false;
+        }
+    }
+
     private void SaveSettingUI()
     {
         SetMasterVolume();
@@ -63,13 +77,13 @@ public class SettingUI : MonoBehaviour
             DataManager.Intance.LoadData();
         }
 
-        master.value = DbToLinear(data.masterVolume);
-        bgm.value = DbToLinear(data.bgmVolume);
-        sfx.value = DbToLinear(data.sfxVolume);
+        master.value = DbToLinear(data.MasterVolume);
+        bgm.value = DbToLinear(data.BgmVolume);
+        sfx.value = DbToLinear(data.SfxVolume);
 
-        mixer.SetFloat("Master", data.masterVolume);
-        mixer.SetFloat("BGM", data.bgmVolume);
-        mixer.SetFloat("SFX", data.sfxVolume);
+        mixer.SetFloat("Master", data.MasterVolume);
+        mixer.SetFloat("BGM", data.BgmVolume);
+        mixer.SetFloat("SFX", data.SfxVolume);
     }
 
 
@@ -106,7 +120,7 @@ public class SettingUI : MonoBehaviour
     {
         float vol = Mathf.Clamp(master.value, 0.0001f, 1f);
         float volume = Mathf.Log10(vol) * 20;
-        data.masterVolume = volume;
+        data.MasterVolume = volume;
         mixer.SetFloat("Master", volume);
     }
 
@@ -114,7 +128,7 @@ public class SettingUI : MonoBehaviour
     {
         float vol = Mathf.Clamp(bgm.value, 0.0001f, 1f);
         float volume = Mathf.Log10(vol) * 20;
-        data.bgmVolume = volume;
+        data.BgmVolume = volume;
         mixer.SetFloat("BGM", volume);
     }
 
@@ -122,7 +136,7 @@ public class SettingUI : MonoBehaviour
     {
         float vol = Mathf.Clamp(sfx.value, 0.0001f, 1f);
         float volume = Mathf.Log10(vol) * 20;
-        data.sfxVolume = volume;
+        data.SfxVolume = volume;
         mixer.SetFloat("SFX", volume);
     }
 }

@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipEvents: {fileID: 11400000, guid: 510ff76d36250594bbcc97e3ac59f6cd, type: 2}
+  playerInputSO: {fileID: 0}
   tooltipText: "\uC774 \uB3C4\uB85C\uB294 \uAC10\uC804\uB418\uC5B4 \uC9C0\uB098\uAC08\uC218\uC5C6\uC2B5\uB2C8\uB2E4."
 --- !u!65 &195907447
 BoxCollider:
@@ -1088,6 +1089,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: feb401434d047934b8201925eeb3d4d7, type: 2}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
+      propertyPath: stageNum
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: twostarsMin
       value: 2
       objectReference: {fileID: 0}
@@ -1097,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: nextSceneIdx
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: threestarsMin
@@ -6418,6 +6423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipEvents: {fileID: 11400000, guid: 510ff76d36250594bbcc97e3ac59f6cd, type: 2}
+  playerInputSO: {fileID: 0}
   tooltipText: "\uC774 \uB3C4\uB85C\uB294 \uAC10\uC804\uB418\uC5B4 \uC9C0\uB098\uAC08\uC218\uC5C6\uC2B5\uB2C8\uB2E4."
 --- !u!199 &560110752
 ParticleSystemRenderer:
@@ -17791,19 +17797,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.z
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8704182521386799710, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Name

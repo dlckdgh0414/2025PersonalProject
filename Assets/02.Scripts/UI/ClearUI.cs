@@ -15,6 +15,7 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private Image[] stars;
     [SerializeField] private GameEventChannelSO sceneChangeEvent;
     [SerializeField] private DataSO dataSO;
+    [SerializeField] private int stageNum;
 
     private void Awake()
     {
@@ -36,17 +37,33 @@ public class ClearUI : MonoBehaviour
     }
 
 
-    public void SetDeliveryTime(string deliveryTime , float minTime,float secTime)
+    public void SetDeliveryTime(string deliveryTime, float minTime, float secTime)
     {
         deliveryTimeText.text = "배달 시간 : " + deliveryTime;
         int starCount = 1;
 
         if (minTime <= threestarsMin && secTime <= threestarsSec)
+        {
             starCount = 3;
+            dataSO.ClearStageStarCount[stageNum -1] = 3;
+        }
         else if (minTime <= twostarsMin && secTime <= twostarsSec)
+        {
             starCount = 2;
+            if(dataSO.ClearStageStarCount[stageNum - 1] <= 2)
+            {
+                dataSO.ClearStageStarCount[stageNum - 1] = 2;
+            }
+        }
+        else
+        {
+            if (dataSO.ClearStageStarCount[stageNum - 1] <= 1)
+            {
+                dataSO.ClearStageStarCount[stageNum - 1] = 1;
+            }
+        }
 
-        ShowStarsAnimated(starCount);
+            ShowStarsAnimated(starCount);
     }
 
     private void ShowStarsAnimated(int count)

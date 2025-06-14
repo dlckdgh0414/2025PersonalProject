@@ -58,37 +58,24 @@ public class WayPoints : MonoBehaviour
         var allPathPoints = new List<Vector3>();
         Vector3 currentPos = player.position;
 
-
-        for (int i = 0; i < _wayPoints.Length; i++)
+        foreach (var wp in _wayPoints)
         {
-            Vector3 targetPos = _wayPoints[i].transform.position;
+            var path = new NavMeshPath();
+            if (!NavMesh.CalculatePath(currentPos, wp.transform.position, NavMesh.AllAreas, path))
+                continue;
 
-            NavMeshPath path = new NavMeshPath();
-            if (NavMesh.CalculatePath(currentPos, targetPos, NavMesh.AllAreas, path))
+            var corners = path.corners;
+
+            int startIndex = allPathPoints.Count > 0 ? 1 : 0;
+
+            for (int i = startIndex; i < corners.Length; i++)
             {
-                int startIndex = (i == 0) ? 0 : 1;
-
-                for (int j = startIndex; j < path.corners.Length; j++)
-                {
-                    Vector3 point = path.corners[j];
-                    point.y += lineHeight;
-                    allPathPoints.Add(point);
-                }
-
-                currentPos = targetPos;
-            }
-            else
-            {
-                // NavMesh 경로를 찾을 수 없으면 직선으로 연결
-                if (allPathPoints.Count == 0)
-                {
-                    allPathPoints.Add(currentPos + Vector3.up * lineHeight);
-                }
-                Vector3 point = targetPos;
+                Vector3 point = corners[i];
                 point.y += lineHeight;
                 allPathPoints.Add(point);
-                currentPos = targetPos;
             }
+
+            currentPos = wp.transform.position;
         }
 
         if (allPathPoints.Count < 2) return;
@@ -160,7 +147,6 @@ public class WayPoints : MonoBehaviour
             lastPoint = nextPoint;
             isDash = !isDash;
         }
-
         if (points.Count > 0 && Vector3.Distance(points[points.Count - 1], end) > 0.01f)
         {
             points.Add(end);

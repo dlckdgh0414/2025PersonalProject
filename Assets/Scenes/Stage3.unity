@@ -1621,19 +1621,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6865826430414394024, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Size.z
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.4
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7380444052353367097, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.6
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8704182521386799710, guid: dbeb4401eb05d83439101ddb48a3ace9, type: 3}
       propertyPath: m_Name
@@ -2396,6 +2396,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d5818936c542b0444a53cbb01c03c7a9, type: 2}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
+      propertyPath: stageNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: twostarsMin
       value: 2
       objectReference: {fileID: 0}
@@ -2405,7 +2409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: nextSceneIdx
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3706389916467044126, guid: 9e933279dcdda3b4eaa66b3ba10a08d7, type: 3}
       propertyPath: threestarsMin

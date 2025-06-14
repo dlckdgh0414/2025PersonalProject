@@ -19,7 +19,7 @@ public class TutorialUI : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!dataSO.isTutorialClear)
+        if (!dataSO.IsTutorialClear)
         {
             manager.IsChangeing = false;
             ShowTextSequence();
@@ -37,7 +37,7 @@ public class TutorialUI : MonoBehaviour
         if (count >= nextUI.Length)
         {
             count = nextUI.Length;
-            dataSO.isTutorialClear = true;
+            dataSO.IsTutorialClear = true;
         }
         manager.IsChangeing = true;
     }

@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public void PlayBnt()
     {
         settingUI.IsEsc = true;
-        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(dataSO.ClearStageNum));
+        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(1));
     }
 
     public void SettingBnt()
