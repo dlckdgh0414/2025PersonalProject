@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -25,8 +26,10 @@ public class RoadPrefab : MonoBehaviour
         }
     }
 
-    public void DestoryRoad()
+    public void DestoryRoad(Grid grid,HashSet<Vector3Int> mapcell)
     {
+        Vector3Int cell = grid.WorldToCell(gameObject.transform.position);
+        mapcell.Remove(cell);
         buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(cost));
         Destroy(gameObject);
     }

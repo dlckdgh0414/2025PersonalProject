@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
                 BGMChange(evt.clip);
                 break;
             case AudioType.SFX:
-                SFXChange(evt.clip,evt.IsLooping);
+                SFXChange(evt.clip,evt.IsLooping,evt.volume);
                 break;
         }
     }
@@ -46,10 +46,11 @@ public class AudioManager : MonoBehaviour
         bgmSource.clip = clip;
         bgmSource.Play();
     } 
-    private void SFXChange(AudioClip clip,bool isLoop)
+    private void SFXChange(AudioClip clip,bool isLoop,float volume)
     {
         sfxSource.loop = isLoop;
         sfxSource.clip = clip;
+        sfxSource.volume = volume;
         sfxSource.Play();
     }
 }

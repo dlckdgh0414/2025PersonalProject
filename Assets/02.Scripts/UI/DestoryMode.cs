@@ -4,6 +4,7 @@ using UnityEngine;
 public class DestoryMode : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO playerInput;
+    [SerializeField] private RoadManager manager;
 
     private void OnEnable()
     {
@@ -19,7 +20,8 @@ public class DestoryMode : MonoBehaviour
     {
         if(playerInput.clickRoadPrefab != null)
         {
-            playerInput.clickRoadPrefab.DestoryRoad();
+
+            playerInput.clickRoadPrefab.DestoryRoad(manager.mapGrid,manager.roadPoints);
         }
     }
 }

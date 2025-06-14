@@ -23,24 +23,20 @@ public class BuildCanvas : MonoBehaviour
 
     private void OnEnable()
     {
-
         buildObject.AddListener<BuildObject>(HandleBuildCostDown);
         buildObject.AddListener<DelObject>(HandleDelObject);
         if (_count <= 0 && tutorialUI != null)
         {
+            tutorialUI.count = 2;
             tutorialUI.gameObject.SetActive(true);
             _count++;
         }
     }
 
-    private void OnDisable()
-    {
-        buildObject.RemoveListener<BuildObject>(HandleBuildCostDown);
-        
-    }
 
     private void OnDestroy()
     {
+        buildObject.RemoveListener<BuildObject>(HandleBuildCostDown);
         buildObject.RemoveListener<DelObject>(HandleDelObject);
     }
 

@@ -15,6 +15,7 @@ public class ToolTipUI : MonoBehaviour
     {
         tootipRect.gameObject.SetActive(false);
         tooltipEvents.AddListener<ShowTooltip>(HandleShowTooltip);
+        tooltipEvents.AddListener<HideTooltip>(HandleHideTooltip);
     }
     private void Update()
     {
@@ -25,19 +26,18 @@ public class ToolTipUI : MonoBehaviour
     private void OnDisable()
     {
         tooltipEvents.RemoveListener<ShowTooltip>(HandleShowTooltip);
+        tooltipEvents.RemoveListener<HideTooltip>(HandleHideTooltip);
+    }
+
+    private void HandleHideTooltip(HideTooltip tooltip)
+    {
+        tootipRect.gameObject.SetActive(false);
     }
 
     private void HandleShowTooltip(ShowTooltip evt)
     {
         tootipRect.gameObject.SetActive(true);
         SetText(evt.message);
-        StartCoroutine(HideTooltip(0.5f));
-    }
-
-    private IEnumerator HideTooltip(float time)
-    {
-        yield return new WaitForSeconds(time);
-        tootipRect.gameObject.SetActive(false);
     }
 
     private void SetText(string message)

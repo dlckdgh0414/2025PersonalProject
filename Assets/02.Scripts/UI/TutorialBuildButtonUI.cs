@@ -13,8 +13,8 @@ public class TutorialButton : MonoBehaviour
     {
         if (_count <= 0)
         {
-            tutorialUI.gameObject.SetActive(true);
             tutorialUI.count = 3;
+            tutorialUI.gameObject.SetActive(true);
             _count++;
         }
     }

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3206933341179426422}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.62, z: 0.48}
   m_LocalScale: {x: 2.04, y: 2.04, z: 2.04}
   m_ConstrainProportionsScale: 1
@@ -4885,6 +4885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipEvents: {fileID: 11400000, guid: 510ff76d36250594bbcc97e3ac59f6cd, type: 2}
+  playerInputSO: {fileID: 11400000, guid: a597eb19651c8af468f6b866e796f8ca, type: 2}
   tooltipText: "\uC774 \uB3C4\uB85C\uB97C \uC9C0\uB098\uAC00\uBA74 \uB3C4\uB85C\uAC00
     \uC0AC\uB77C\uC9D1\uB2C8\uB2E4."
 --- !u!1 &6895459624106576590

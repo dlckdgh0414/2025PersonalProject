@@ -8,7 +8,7 @@ using UnityEngine.Splines.ExtrusionShapes;
 public class RoadManager : MonoBehaviour
 {
     [SerializeField] private PlayerInputSO bulidInput;
-    [SerializeField] private Grid mapGrid;
+    [SerializeField] public Grid mapGrid;
     [SerializeField] private Transform roadTrm;
     [SerializeField] private GameEventChannelSO buildObjectUI;
     [SerializeField] private GameEventChannelSO buildObject;
@@ -30,7 +30,7 @@ public class RoadManager : MonoBehaviour
 
     private bool _isConstructionMode;
 
-    private HashSet<Vector3Int> _roadPoints;
+    [HideInInspector] public HashSet<Vector3Int> roadPoints;
     private MeshFilter _meshFilter;
     private bool _isBuilding = true;
 
@@ -48,7 +48,7 @@ public class RoadManager : MonoBehaviour
 
     private void Awake()
     {
-        _roadPoints = new HashSet<Vector3Int>();
+        roadPoints = new HashSet<Vector3Int>();
         _meshFilter = GetComponent<MeshFilter>();
         _meshFilter.mesh = new Mesh();
         foreach (Transform child in roadTrm)
@@ -57,7 +57,7 @@ public class RoadManager : MonoBehaviour
             if (road != null)
             {
                 Vector3Int cell = mapGrid.WorldToCell(road.transform.position);
-                _roadPoints.Add(cell);
+                roadPoints.Add(cell);
             }
         }
         bulidInput.OnBuildPressed += HandleClick;
@@ -87,7 +87,7 @@ public class RoadManager : MonoBehaviour
         {
             RoadPrefab roadToDelete = _roadHistory.Pop();
             Vector3Int cell = mapGrid.WorldToCell(roadToDelete.transform.position);
-            _roadPoints.Remove(cell);
+            roadPoints.Remove(cell);
 
             buildObject.RaiseEvent(BuildEvents.DelObject.Initializer(_buildCostHistory.Pop()));
             Destroy(roadToDelete.gameObject);
@@ -106,6 +106,7 @@ public class RoadManager : MonoBehaviour
             Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
             if (_roadPrivePrefab == null)
             {
+                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost));
                 _roadPrivePrefab = Instantiate(_roadBlackPrefab, center, Quaternion.Euler(0, RotBuildObject, 0));
             }
             center.y = 0.1f;
@@ -148,7 +149,7 @@ public class RoadManager : MonoBehaviour
 
         if (CanPlaceRoad(_roadPrivePrefab))
         {
-            if (_roadPoints.Add(GetCellSize()))
+            if (roadPoints.Add(GetCellSize()))
             {
                 Vector3 center = mapGrid.GetCellCenterWorld(GetCellSize());
                 center.y = 0.1f;
@@ -158,7 +159,7 @@ public class RoadManager : MonoBehaviour
                 _currentroad.IsBuilding = true;
                 _roadHistory.Push(_currentroad);
                 _buildCostHistory.Push(_buildCost);
-                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCostHistory.Peek(),true));
+                buildObject.RaiseEvent(BuildEvents.BuildObject.Initializer(_buildCost,true));
                 Destroy(_roadPrivePrefab.gameObject);
                 OnUpdateRoad?.Invoke();
             }

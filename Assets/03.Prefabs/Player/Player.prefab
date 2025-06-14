@@ -2094,10 +2094,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2420989063366673354}
   speed: 12
-  stopOffset: 0.05
+  stopOffset: 0.1
   maxLeanAngle: 25
   leanSpeed: 5
   modelTransform: {fileID: 0}
+  dirveCam: {fileID: 0}
 --- !u!1 &1496725847493509114
 GameObject:
   m_ObjectHideFlags: 0
@@ -9492,12 +9493,14 @@ MonoBehaviour:
   wayPoints: {fileID: 2764144906457827392}
   playerMovement: {fileID: 8066233627136490014}
   playerEvent: {fileID: 11400000, guid: 6dac5263c5baae84f811e7a20642e7d0, type: 2}
+  audioChangeEvent: {fileID: 11400000, guid: a957a6e349612ff49b9975bb84a2850b, type: 2}
   playerCnt: {fileID: 5879565437421664572}
   deliveryTrm: {fileID: 6741762943759592320}
   isLoop: 0
   isMove: 0
   foodObj: {fileID: 0}
   animator: {fileID: 150890378207688423}
+  motorcyclesfx: {fileID: 8300000, guid: d4bd05946d871de40848d687ceae2e03, type: 3}
 --- !u!54 &3696289090022044507
 Rigidbody:
   m_ObjectHideFlags: 0

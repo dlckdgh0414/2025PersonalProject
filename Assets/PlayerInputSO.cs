@@ -24,6 +24,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
     private Vector2 _screenPosition;
 
     private int _changeCount = 0;
+    private GimmickToolTip _gimmick;
 
     private void OnEnable()
     {
@@ -76,6 +77,15 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
             if (hit.collider.TryGetComponent(out GimmickToolTip gimmick))
             {
                 gimmick.RaiseGimickToolTip();
+                _gimmick = gimmick;
+            }
+            else
+            {
+                if(_gimmick != null)
+                {
+
+                    _gimmick.HideGimickToolTip();
+                }
             }
             _worldPosition = hit.point;
         }

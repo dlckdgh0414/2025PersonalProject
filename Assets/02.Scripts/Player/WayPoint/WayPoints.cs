@@ -11,6 +11,9 @@ public class WayPoints : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Material channelMat;
     [SerializeField] private NavMeshSurface navMeshSurface;
+    [SerializeField] private float lineHeight = 0.1f;
+    [SerializeField] private float dashLength = 0.3f;
+    [SerializeField] private float gapLength = 0.2f;
 
     private LineRenderer _lineRenderer;
     private NavMeshAgent _agent;
@@ -22,16 +25,12 @@ public class WayPoints : MonoBehaviour
     {
         _lineRenderer = GetComponent<LineRenderer>();
         _agent = player.GetComponent<NavMeshAgent>();
-
-
         _lineRenderer.enabled = false;
         _lineRenderer.material = channelMat;
         _lineRenderer.textureMode = LineTextureMode.Tile;
-        _lineRenderer.alignment = LineAlignment.TransformZ;
         _lineRenderer.alignment = LineAlignment.View;
         _lineRenderer.numCornerVertices = 5;
         _lineRenderer.numCapVertices = 3;
-
         _lineRenderer.startWidth = 0.8f;
         _lineRenderer.endWidth = 0.8f;
         _lineRenderer.startColor = Color.yellow;
@@ -39,84 +38,134 @@ public class WayPoints : MonoBehaviour
         _lineRenderer.material.color = Color.yellow;
     }
 
-    private void Update()
+    public void HideLineRenderer()
     {
+        _lineRenderer.enabled = false;
     }
-
-
 
     public void SetWayPoint()
     {
         navMeshSurface.BuildNavMesh();
         _wayPoints = GetComponentsInChildren<WayPoint>();
         transform.SetParent(null);
-        DrawFullNavPath();
+        DrawNavMeshDottedPath();
     }
 
-    private void DrawFullNavPath()
+    private void DrawNavMeshDottedPath()
     {
         if (_wayPoints.Length == 0 || _agent == null) return;
 
-        List<Vector3> fullPathPoints = new List<Vector3>();
+        var allPathPoints = new List<Vector3>();
         Vector3 currentPos = player.position;
 
-        foreach (var wp in _wayPoints)
+
+        for (int i = 0; i < _wayPoints.Length; i++)
         {
+            Vector3 targetPos = _wayPoints[i].transform.position;
+
             NavMeshPath path = new NavMeshPath();
-            if (NavMesh.CalculatePath(currentPos, wp.transform.position, NavMesh.AllAreas, path))
+            if (NavMesh.CalculatePath(currentPos, targetPos, NavMesh.AllAreas, path))
             {
-                Vector3[] rawCorners = path.corners;
-                List<Vector3> smooth = BezierSmooth(rawCorners, 4);
+                int startIndex = (i == 0) ? 0 : 1;
 
+                for (int j = startIndex; j < path.corners.Length; j++)
+                {
+                    Vector3 point = path.corners[j];
+                    point.y += lineHeight;
+                    allPathPoints.Add(point);
+                }
 
-                if (fullPathPoints.Count > 0 && fullPathPoints[^1] == smooth[0])
-                    fullPathPoints.AddRange(smooth.GetRange(1, smooth.Count - 1));
-                else
-                    fullPathPoints.AddRange(smooth);
-
-                currentPos = wp.transform.position;
+                currentPos = targetPos;
+            }
+            else
+            {
+                // NavMesh 경로를 찾을 수 없으면 직선으로 연결
+                if (allPathPoints.Count == 0)
+                {
+                    allPathPoints.Add(currentPos + Vector3.up * lineHeight);
+                }
+                Vector3 point = targetPos;
+                point.y += lineHeight;
+                allPathPoints.Add(point);
+                currentPos = targetPos;
             }
         }
 
-        if (fullPathPoints.Count < 2) return;
+        if (allPathPoints.Count < 2) return;
 
-        _lineRenderer.positionCount = fullPathPoints.Count;
-        _lineRenderer.SetPositions(fullPathPoints.ToArray());
+        var dottedPoints = ConvertPathToDottedLine(allPathPoints);
+
+        _lineRenderer.positionCount = dottedPoints.Count;
+        _lineRenderer.SetPositions(dottedPoints.ToArray());
         _lineRenderer.enabled = true;
     }
 
-    private List<Vector3> BezierSmooth(Vector3[] corners, int steps = 5)
+    private List<Vector3> ConvertPathToDottedLine(List<Vector3> pathPoints)
     {
-        var pts = new List<Vector3>();
-        for (int i = 0; i < corners.Length - 1; i++)
+        var dottedPoints = new List<Vector3>();
+
+        for (int i = 0; i < pathPoints.Count - 1; i++)
         {
-            Vector3 a = corners[i];
-            Vector3 b = corners[i + 1];
-            Vector3 mid = (a + b) * 0.5f;
-            Vector3 dir = (b - a).normalized;
-            Vector3 perp = Vector3.Cross(dir, Vector3.up) * 0.3f;
+            Vector3 start = pathPoints[i];
+            Vector3 end = pathPoints[i + 1];
 
-            Vector3 cp1 = mid + perp;
-            Vector3 cp2 = mid - perp;
+            var segmentDottedPoints = CreateDashedLine(start, end);
 
-            for (int j = 0; j <= steps; j++)
+            int startIdx = (i == 0) ? 0 : 1;
+            for (int j = startIdx; j < segmentDottedPoints.Count; j++)
             {
-                float t = j / (float)steps;
-                Vector3 p = Mathf.Pow(1 - t, 3) * a +
-                            3 * Mathf.Pow(1 - t, 2) * t * cp1 +
-                            3 * (1 - t) * Mathf.Pow(t, 2) * cp2 +
-                            Mathf.Pow(t, 3) * b;
-
-                if (pts.Count == 0 || Vector3.Distance(pts[^1], p) > 0.01f)
-                    pts.Add(p);
+                dottedPoints.Add(segmentDottedPoints[j]);
             }
         }
 
-        if (pts.Count == 0 || Vector3.Distance(pts[^1], corners[^1]) > 0.01f)
-            pts.Add(corners[^1]);
-
-        return pts;
+        return dottedPoints;
     }
 
+    private List<Vector3> CreateDashedLine(Vector3 start, Vector3 end)
+    {
+        var points = new List<Vector3>();
 
+        Vector3 direction = (end - start).normalized;
+        float totalDistance = Vector3.Distance(start, end);
+        float currentDistance = 0f;
+
+        bool isDash = true;
+        Vector3 lastPoint = start;
+
+        points.Add(start);
+
+        while (currentDistance < totalDistance)
+        {
+            float segmentLength = isDash ? dashLength : gapLength;
+            float remainingDistance = totalDistance - currentDistance;
+
+            if (segmentLength > remainingDistance)
+            {
+                segmentLength = remainingDistance;
+            }
+
+            currentDistance += segmentLength;
+            Vector3 nextPoint = start + direction * currentDistance;
+
+            if (isDash)
+            {
+                points.Add(nextPoint);
+            }
+            else
+            {
+                points.Add(lastPoint);
+                points.Add(nextPoint);
+            }
+
+            lastPoint = nextPoint;
+            isDash = !isDash;
+        }
+
+        if (points.Count > 0 && Vector3.Distance(points[points.Count - 1], end) > 0.01f)
+        {
+            points.Add(end);
+        }
+
+        return points;
+    }
 }

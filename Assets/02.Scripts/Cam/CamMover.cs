@@ -26,7 +26,9 @@ public class CamMover : MonoBehaviour
 
     private void HandleZoomOutCam(float zoomOut)
     {
-        came.Lens.OrthographicSize = Mathf.Clamp(came.Lens.FieldOfView + (zoomOut * 10f), 60f,  150f);
+        Vector3 rigPos = transform.position;
+        rigPos.y = Mathf.Clamp(rigPos.y + zoomOut * 2f, 57f, 110f);
+        transform.position = rigPos;
     }
 
     private void MoveCamera()

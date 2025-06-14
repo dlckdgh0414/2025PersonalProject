@@ -34,7 +34,7 @@ public class TutorialUI : MonoBehaviour
     private void OnDisable()
     {
         count++;
-        if(count >= nextUI.Length)
+        if (count >= nextUI.Length)
         {
             count = nextUI.Length;
             dataSO.isTutorialClear = true;
@@ -58,5 +58,6 @@ public class TutorialUI : MonoBehaviour
 
         nextUI[count].SetActive(true);
         gameObject.SetActive(false);
+
     }
 }

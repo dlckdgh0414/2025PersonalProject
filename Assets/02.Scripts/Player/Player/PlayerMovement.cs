@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         float angleDelta = Vector3.SignedAngle(currentDir, desiredDir, Vector3.up);
         float speedFactor = Mathf.Clamp01(agent.velocity.magnitude / agent.speed);
-        float targetLean = Mathf.Clamp(-angleDelta, -35f, 35f) * speedFactor;
+        float targetLean = Mathf.Clamp(-angleDelta, -25f, 25f) * speedFactor;
 
         Vector3 currentEuler = modelTransform.localEulerAngles;
         currentEuler.z = Mathf.LerpAngle(currentEuler.z, targetLean, Time.deltaTime * leanSpeed);

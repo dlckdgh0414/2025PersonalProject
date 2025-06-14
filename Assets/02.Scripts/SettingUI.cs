@@ -13,6 +13,8 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private DataSO data;
     [SerializeField] private Image setting;
+    [SerializeField] private GameEventChannelSO sceneChangeEvent;
+    [SerializeField] private GameObject mainMenuBtn;
     public bool IsEsc;
 
     private void OnEnable()
@@ -20,6 +22,7 @@ public class SettingUI : MonoBehaviour
         SetMasterVolume();
         SetBgmVolume();
         SetSfxCVolume();
+        mainMenuBtn.SetActive(false);
     }
 
     private void Start()
@@ -80,12 +83,21 @@ public class SettingUI : MonoBehaviour
         HideSetting();
     }
 
+    public void MainMenuBnt()
+    {
+        Time.timeScale = 1f;
+        sceneChangeEvent.RaiseEvent(SceneChangeEvents.SceneChnages.Initializer(0));
+        HideSetting();
+    }
+
     private void Update()
     {
         if (IsEsc)
         {
+            mainMenuBtn.SetActive(true);
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
+                ShowSetting();
             }
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 public static class TooltipEvents 
 {
     public static ShowTooltip ShowTooltip = new ShowTooltip();
+    public static HideTooltip HideTooltip = new HideTooltip();
 }
 
 public class ShowTooltip : GameEvent
@@ -14,4 +15,9 @@ public class ShowTooltip : GameEvent
         this.message = message;
         return this;
     }
+}
+
+public class HideTooltip : GameEvent
+{
+    
 }
